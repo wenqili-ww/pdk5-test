@@ -329,7 +329,7 @@
         );
         requireScript.src = "/javascripts/vendor/require.js";
       } else {
-        requireScript.src = window.wirewax.baseUrl + "javascripts/wwplayer.js";
+        requireScript.src = "../wwplayer.js";
       }
       var head =
         document.getElementsByTagName("head")[0] || document.documentElement;
