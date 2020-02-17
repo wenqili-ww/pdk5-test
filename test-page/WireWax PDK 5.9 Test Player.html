@@ -1,0 +1,1177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0078)https://player.theplatform.com/p/1RZrUC/Iz284JlcINAR/select/media/tNwLuwiNx2e7 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:tp="http://player.theplatform.com/" xmlns:og="http://ogp.me/ns#"
+	xml:lang="en" lang="en">
+<script async="" src="./WireWax PDK 5.9 Test Player_files/P60D13B20-DE38-4A7B-AF64-190CE3BCF6EB.js"></script>
+<script type="text/javascript" async="" src="/Users/wenqi/workspace/pdk-wirewax-plugin/wirewax-platform.js"></script>
+<!-- <script type="text/javascript" async="" src="https://wirewax.s3-eu-west-1.amazonaws.com/wirewax-platform/wirewax-platform.js"></script> -->
+
+<script type="text/javascript">window["_gaUserPrefs"] = { ioo: function () { return true; } }</script>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style>
+		.tpPlayer .tpPlayerCard {
+			position: absolute;
+			color: #bebebe;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(19, 19, 19, 0.6);
+			text-align: left;
+		}
+
+		.tpPlayer .tpOverlayBackground {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: rgba(19, 19, 19, 0.6);
+		}
+
+		.tpPreviewPlayer .tpCurrentTime {
+			left: 20px;
+			top: 20px;
+			font-size: 20px;
+			color: #bebebe;
+			text-shadow: 0 0 3px #131313, 0 0 3px #131313, 0 0 3px #131313;
+		}
+
+		:-webkit-full-screen .tpPlayerCard>* {
+			zoom: 2;
+			content: "a";
+		}
+
+		:-webkit-full-screen .tpRelatedHeader {
+			zoom: 2;
+			content: "b";
+		}
+
+		:-webkit-full-screen .tpRelatedFooter {
+			zoom: 2;
+			content: "c";
+		}
+
+		:-webkit-full-screen .tpRelatedItems {
+			zoom: 1;
+		}
+
+		.tpLineFade {
+			width: 100%;
+			height: 12px;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			background: -moz-linear-gradient(top, rgba(19, 19, 19, 0.0) 0, rgba(19, 19, 19, 1.0) 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(19, 19, 19, 0.0)), color-stop(100%, rgba(19, 19, 19, 1.0)));
+			background: -webkit-linear-gradient(top, rgba(19, 19, 19, 0.0) 0, rgba(19, 19, 19, 1.0) 100%);
+			background: -o-linear-gradient(top, rgba(19, 19, 19, 0.0) 0, rgba(19, 19, 19, 1.0) 100%);
+			background: -ms-linear-gradient(top, rgba(19, 19, 19, 0.0) 0, rgba(19, 19, 19, 1.0) 100%);
+			background: linear-gradient(to bottom, rgba(19, 19, 19, 0.0) 0, rgba(19, 19, 19, 1.0) 100%);
+			filter: progid;
+		}
+
+		.tpOverlayCard {
+			pointer-events: none !important;
+		}
+
+		.tpPlayerCard input[type="text"],
+		.tpPlayerCard input[type="password"],
+		.tpPlayerCard textarea,
+		.tpPlayerCard .tpTextInput {
+			color: #bebebe;
+			border: 1px solid #555555;
+			background-color: #131313;
+			margin: 1px !important;
+			padding: 0;
+			resize: none;
+			-webkit-appearance: none;
+			-webkit-border-radius: 0;
+		}
+
+		.tpPlayerCard select {
+			color: #bebebe;
+			border: 1px solid #555555;
+			background-color: #131313;
+			margin: 1px !important;
+			padding: 0;
+			resize: none;
+			-webkit-border-radius: 0;
+		}
+
+		.tpPlayer .tpPlayerCard a img {
+			border: 0;
+		}
+
+		.tpControlBackground {
+			background: #131313;
+		}
+
+		.tpControlBorder {
+			border-color: #555555;
+		}
+
+		.tpPlayerCard.tpMenuCard {
+			text-align: center;
+			background: none;
+		}
+
+		.tpPlayerCard.tpResumePlaybackCard {
+			text-align: center;
+		}
+
+		.tpPlayerCard .tpMenuButtons {
+			position: absolute;
+			top: 50%;
+			width: 100%;
+			margin-top: -25px;
+			font-size: 0;
+		}
+
+		.tpMenuCard .tpMenuButtons .tpButton {
+			width: 50px;
+			height: 50px;
+			margin-right: 12px;
+		}
+
+		.tpMenuCard .tpMenuButtons .tpButton:last-child {
+			margin-right: 0;
+		}
+
+		.tpMenuCard .tpRelatedItems {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+
+		.tpMenuCard .tpMenuButtons.tpHasRelated {
+			top: 30%;
+		}
+
+		.tpRelatedItems {
+			width: 100%;
+			height: 40%;
+			background: rgba(19, 19, 19, 0.6);
+		}
+
+		.tpRelatedItems .tpRelatedHeader {
+			text-align: left;
+			height: 25px;
+			border-bottom: 1px solid #555555;
+			line-height: 25px;
+		}
+
+		.tpRelatedItems .tpRelatedHeader .tpRange {
+			float: right;
+			margin-right: 40px;
+		}
+
+		.tpRelatedItems .tpRelatedHeader .tpLabel {
+			float: left;
+			margin-left: 39px;
+		}
+
+		.tpRelatedItems .tpRelatedPrevious {
+			float: left;
+			width: 30px;
+			height: 30px;
+		}
+
+		.tpRelatedItems .tpRelatedNext {
+			float: left;
+			width: 30px;
+			height: 30px;
+			margin-left: 10px;
+		}
+
+		.tpRelatedItems .tpRelatedTiles {
+			float: left;
+			display: inline-block;
+			position: relative;
+		}
+
+		.tpRelatedItems .tpRelatedTiles .tpRelatedTile {
+			display: inline-block;
+			margin-left: 10px;
+			font-size: 14px;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.tpRelatedItems .tpRelatedTiles .tpRelatedTile img {
+			border: 1px solid #555555;
+		}
+
+		.tpRelatedTile .tpRelatedInfo {
+			float: right;
+			text-align: left;
+			margin-left: 4px;
+		}
+
+		.tpRelatedTile h4 {
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+		}
+
+		.tpRelatedTile span {
+			margin: 0;
+			padding: 0;
+			font-size: 12px;
+		}
+
+		.tpRelatedItems .tpRelatedFooter {
+			text-align: left;
+			height: 25px;
+			line-height: 25px;
+			clear: both;
+			margin-left: 39px;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		a.tpButton,
+		div.tpButton {
+			display: inline-block;
+			padding: 0;
+			margin: 0;
+			border: 0;
+		}
+
+		.tpButton>span {
+			display: inline-block;
+			padding: 2px 6px 2px 6px;
+		}
+
+		.tpResumePlaybackCard .tpMenuButtons .tpButton {
+			width: 100px;
+			height: 40px;
+		}
+
+		.tpInfoCard .tpCardBody {
+			padding-bottom: 26px !important;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.tpInfoCard .tpCardContent {
+			height: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			margin-left: 4px;
+		}
+
+		.tpInfoCard .tpMediaPreview {
+			margin-right: 6px;
+			margin-bottom: 6px;
+		}
+
+		.tpInfoCard .tpMetaData>span {
+			margin-bottom: 4px;
+			display: block;
+		}
+
+		.tpMetaData {
+			font-size: 14px;
+		}
+
+		.tpCardHeadline .tpTitle {
+			font-size: 16px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			margin-bottom: 6px;
+			margin-top: 6px;
+		}
+
+		.tpMetaData .tpTitle {
+			font-size: 16px;
+		}
+
+		.tpInfoCard .tpCardExtras {
+			font-size: 14px;
+			text-align: left;
+		}
+
+		.tpInfoCard .tpCopyright {
+			position: absolute;
+			bottom: 6px;
+			left: 6px;
+			font-size: 11px;
+		}
+
+		.tpRssCard .tpCardForm {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			float: left;
+		}
+
+		.tpCopyable::selection,
+		.tpCopyable::-moz-selection {
+			background: rgba(106, 129, 134, 0.75);
+			color: #131313;
+		}
+
+		.tpPlayerCard {
+			position: relative;
+		}
+
+		.tpPlayerCard .tpCardHeader {
+			height: 26px;
+			padding-left: 4px;
+			padding-right: 4px;
+			padding-top: 0;
+			position: relative;
+		}
+
+		.tpPlayerCard .tpCardBody {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			margin-top: 25px;
+			padding: 2px;
+			background: rgba(19, 19, 19, 0.6);
+		}
+
+		.tpPlayerCard .tpCardBody .tpCardHeadline h3 {
+			margin-top: 4px;
+			margin-bottom: 8px;
+			font-size: 16px;
+		}
+
+		.tpPlayerCard .tpCardHeader .tpCardTitle {
+			position: absolute;
+			top: 2px;
+			left: 2px;
+			right: 0;
+			line-height: 22px;
+			font-size: 15px;
+			font-weight: bolder;
+		}
+
+		.tpPlayerCard .tpCardHeader .tpCardTitle .tpIcon {
+			margin-left: 2px;
+			margin-right: 2px;
+			width: 22px;
+			height: 22px;
+		}
+
+		.tpPlayerCard .tpCardHeader .tpCardTabs {
+			position: absolute;
+			padding-top: 3px;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			font-size: 0;
+			text-align: center;
+			z-index: 1;
+		}
+
+		.tpPlayerCard .tpCardHeader .tpCardTabs .tpNavButton {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			width: 30px;
+			height: 22px;
+			font-size: auto;
+		}
+
+		.tpPlayerCard .tpCardHeader .tpCardClose {
+			position: absolute;
+			top: 2px;
+			right: 6px;
+			z-index: 10;
+		}
+
+		.tpMediaPreview,
+		.tpPreview {
+			width: 50%;
+			height: 50%;
+			float: left;
+			position: relative;
+			top: 0;
+			left: 0;
+			background: #131313;
+			overflow: hidden;
+		}
+
+		.tpPreviewPlayer {
+			border: 1px solid #555555;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+
+		.tpMediaPreview .tpMediaBorder {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			border: 1px solid white;
+		}
+
+		.tpMediaPreview img {
+			width: 100%;
+			height: auto;
+			padding: 0;
+		}
+
+		.tpCardForm {
+			width: 50%;
+			height: 50%;
+			position: relative;
+			float: left;
+		}
+
+		.tpCardForm>div {
+			position: absolute;
+			top: 0;
+			left: 4px;
+			right: 4px;
+			bottom: 0;
+		}
+
+		.tpCardForm h4 {
+			margin-left: 4px;
+			margin-right: 0;
+			margin-bottom: 2px;
+			margin-top: 4px;
+			font-size: 15px;
+			font-weight: normal;
+			color: #bebebe;
+		}
+
+		.tpCardForm input[type="text"],
+		.tpCardForm textarea {
+			width: 100%;
+			font-family: inherit;
+			padding: 0 0 0 2px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			height: auto;
+			font-size: 13px;
+		}
+
+		.tpCardForm ul {
+			padding: 2px;
+			list-style: none;
+			background-color: #131313;
+			margin-top: 0;
+			margin-bottom: 0;
+			margin-left: 0;
+			margin-right: 0;
+			border: 1px solid #555555;
+			color: #bebebe;
+			overflow-x: hidden;
+			overflow-y: hidden;
+			top: 24px;
+			bottom: 30px;
+			left: 2px;
+			right: 0;
+			position: absolute;
+		}
+
+		.tpCardForm .tpPostSiteList {
+			padding: 8px;
+			bottom: 0;
+			margin: 4px;
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
+
+		.tpCardForm .tpFormActions {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+
+		.tpCardForm ul li {
+			float: left;
+			font-size: 13px;
+			margin-bottom: 8px;
+			width: 100%;
+			word-wrap: break-word;
+		}
+
+		.tpCardForm .tpPostSiteList li {
+			width: 50%;
+			white-space: nowrap;
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
+
+		.tpCardForm ul li a {
+			color: #bebebe;
+			text-decoration: none;
+		}
+
+		.tpCardForm ul li a:hover {
+			text-decoration: underline;
+		}
+
+		.tpCardForm ul li img {
+			vertical-align: bottom;
+			margin-right: 8px;
+		}
+
+		.tpCardExtras {
+			float: left;
+			width: 100%;
+			height: 50%;
+			margin: 0;
+			font-size: 14px;
+			text-align: center;
+			position: relative;
+		}
+
+		.tpExcerptControls {
+			position: absolute;
+			left: 50px;
+			right: 50px;
+			top: 0;
+			bottom: 0;
+			height: 30px;
+			margin: auto;
+			display: inline-block;
+		}
+
+		.tpExcerptInfo {
+			position: absolute;
+			left: 20px;
+			right: 20px;
+			top: 0;
+			bottom: 50%;
+			height: 16px;
+			margin: auto;
+			display: inline-block;
+		}
+
+		.tpCardTitle .tpIcon {
+			float: left;
+		}
+	</style>
+	<style>
+		.PlayerLabelFont {
+			font-family: Calibri, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+			font-size: 14px;
+			color: #F2F2F2;
+		}
+
+		.PlayerTitleFont {
+			font-family: Calibri, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+			font-size: 14px;
+			font-weight: bold;
+			line-height: 143% !important;
+		}
+
+		.PlayerCountdownFont {
+			font-family: Calibri, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+			font-size: 14px;
+			font-weight: bold;
+			line-height: 143% !important;
+		}
+
+		.tpExcerptInfo {
+			padding-bottom: 16px;
+		}
+
+		.PlayerLabelFont {
+			color: #bebebe;
+		}
+
+		.PlayerTitleFont {
+			color: #bebebe;
+			text-shadow: 1px 1px 1px #131313;
+		}
+
+		.PlayerCountdownFont {
+			color: #bebebe;
+			text-shadow: 1px 1px 1px #131313;
+		}
+
+		.PlayerControlLabelFont {
+			color: #bebebe;
+		}
+
+		div.PlayerControlLabelHoverFont {
+			color: #dddddd !important;
+		}
+
+		div.PlayerControlLabelSelectedFont {
+			color: #6a8186 !important;
+		}
+	</style>
+	<link type="text/css" rel="stylesheet" href="./WireWax PDK 5.9 Test Player_files/default.css" media="screen">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WireWax PDK 5.9 Test Player</title>
+	<link rel="alternate"
+		href="https://feed.theplatform.com/f/1RZrUC/LlSh01LhAkS_?form=rss&amp;params=policy%3D97945462&amp;linkUrl=https%3A%2F%2Fplayer.theplatform.com%2Fp%2F1RZrUC%2FIz284JlcINAR%2Fselect%2Fmedia%2F%7BmediaPid%7D"
+		type="application/rss+xml">
+	<meta name="tp:PreferredRuntimes" content="universal">
+	<meta name="tp:PreferredFormats" content="MPEG4,M3U">
+	<meta name="tp:EnableExternalController" content="true">
+	<link rel="alternate"
+		href="https://link.theplatform.com/s/1RZrUC/media/tNwLuwiNx2e7?manifest=m3u&amp;player=WireWax%20PDK%205.9%20Test%20Player&amp;policy=97945462"
+		type="application/smil+xml">
+
+	<meta property="og:url" content="https://player.theplatform.com/p/1RZrUC/Iz284JlcINAR/select/media/tNwLuwiNx2e7">
+	<meta property="og:video"
+		content="http://player.theplatform.com/p/1RZrUC/Iz284JlcINAR/swf/select/media/tNwLuwiNx2e7&amp;autoPlay=true">
+	<meta property="og:video:secure_url"
+		content="https://player.theplatform.com/p/1RZrUC/Iz284JlcINAR/swf/select/media/tNwLuwiNx2e7&amp;autoPlay=true">
+	<meta property="og:title" content="Are You Ready to Boogie Down?">
+	<meta property="og:description"
+		content="The Carltons attempt to transform themselves into competitive ballroom dancers, with mixed results.">
+	<meta property="og:type" content="movie">
+	<meta property="og:image"
+		content="https://amc350885sec-a.akamaihd.net/thumbnail/AMC_Networks_Stage_-_BBC_America/874/943/Almost_Royal__203_Deleted_Scene_YouTube_Preset_1920x1080_609904195537__810715.jpg">
+	<meta name="twitter:card" content="player">
+	<meta name="twitter:player"
+		content="https://player.theplatform.com/p/1RZrUC/Iz284JlcINAR/embed/select/media/tNwLuwiNx2e7?autoPlay=false">
+	<meta name="twitter:player:width" content="480">
+	<meta name="twitter:player:height" content="270">
+	<style type="text/css" media="screen">
+		body {
+			margin: 0px;
+			background-color: #131313;
+		}
+
+		.tpContainer {
+			position: relative;
+			width: 480px;
+			height: 270px;
+			padding-top: 5px;
+			padding-left: 5px;
+			padding-bottom: 5px;
+			padding-right: 5px;
+			background-image: url(https://pdk.theplatform.com/current/images/tile.jpg);
+			background-position: top;
+			background-repeat: repeat;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.tpLayout {
+			position: relative;
+		}
+
+		.tpMessage {
+			font-size: 14px;
+			color: #bebebe;
+			background: #131313;
+		}
+
+		#player {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 480px;
+			height: 270px;
+		}
+
+		#releases {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 1px;
+			height: 1px;
+		}
+	</style>
+	<script type="text/javascript" src="./WireWax PDK 5.9 Test Player_files/tpPdk.js"></script>
+	<style id="tpCategoryListLoading">
+		.tpCategoryList>* {
+			display: none !important;
+		}
+	</style>
+	<style id="tpHeaderLoading">
+		.tpHeader>* {
+			display: none !important;
+		}
+	</style>
+	<style id="tpClipInfoLoading">
+		.tpClipInfo>* {
+			display: none !important;
+		}
+	</style>
+	<style id="tpSearchLoading">
+		.tpSearch>* {
+			display: none !important;
+		}
+	</style>
+	<style id="tpReleaseModelLoading">
+		.tpReleaseModel>* {
+			display: none !important;
+		}
+	</style>
+	<style id="tpNavigationLoading">
+		.tpNavigation>* {
+			display: none !important;
+		}
+	</style>
+	<style id="tpCategoryModelLoading">
+		.tpCategoryModel>* {
+			display: none !important;
+		}
+	</style>
+	<script type="text/javascript"
+		src="./WireWax PDK 5.9 Test Player_files/484714A8BE5960AC0C06FB06AA3825BF.cache.js"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="./WireWax PDK 5.9 Test Player_files/main.css">
+	<style type="text/css">
+		#releases.tpReleaseList>ul .tpRelease a,
+		ul#releases.tpReleaseList .tpRelease a {
+			background-color: #131313;
+		}
+
+		#releases.tpReleaseList>ul .tpRelease a .tpMetadata,
+		ul#releases.tpReleaseList .tpRelease a .tpMetadata {
+			background-color: #131313;
+		}
+
+		#releases.tpReleaseList .tpRelease a {
+			border-color: #242424;
+		}
+
+		#releases.tpReleaseList .tpRelease .tpShine {
+			background-color: #242424;
+		}
+
+		#releases.tpReleaseList .tpRelease .tpShine {
+			border-color: #242424;
+		}
+
+		#releases.tpReleaseList .tpRelease .tpMetadata {
+			border-color: #242424;
+		}
+
+		#releases.tpReleaseList .tpRelease a .tpMetadata .tpGroup {
+			border-color: #242424;
+		}
+
+		#releases.tpReleaseList .tpRelease a {
+			color: #bebebe;
+		}
+
+		#releases.tpReleaseList .tpRelease .tpThumbnail {
+			border-color: #242424;
+		}
+
+		#releases.tpReleaseList .tpRelease .tpThumbnail {
+			background-color: #131313;
+		}
+
+		#releases.tpReleaseList .tpRelease .tpThumbnail img {
+			background-color: #131313;
+		}
+
+		#releases.tpReleaseList .tpRelease .tpThumbnail {
+			background-color: #131313;
+		}
+
+		#releases.tpReleaseList {
+			border-color: #555555;
+		}
+
+		#releases.tpReleaseList ul {
+			border-color: #555555;
+		}
+
+		#releases.tpReleaseList ol {
+			border-color: #555555;
+		}
+
+		#releases.tpReleaseList .tpRelease:hover .tpShine {
+			background-color: #dddddd;
+		}
+
+		#releases.tpReleaseList .tpRelease:hover .tpShine {
+			border-color: #dddddd;
+		}
+
+		#releases.tpReleaseList .tpRelease:hover a {
+			color: #dddddd;
+		}
+
+		#releases.tpReleaseList .tpRelease:hover a .tpMetadata .tpGroup {
+			border-color: #dddddd !important;
+		}
+
+		#releases.tpReleaseList .tpRelease:hover a .tpThumbnail {
+			border-color: #dddddd !important;
+		}
+
+		#releases.tpReleaseList .tpReleaseSelected .tpShine {
+			background-color: #6a8186;
+		}
+
+		#releases.tpReleaseList .tpReleaseSelected .tpShine {
+			border-color: #6a8186;
+		}
+
+		#releases.tpReleaseList .tpReleaseSelected a {
+			color: #6a8186;
+		}
+
+		#releases.tpReleaseList .tpReleaseSelected a .tpMetadata .tpGroup {
+			border-color: #6a8186 !important;
+		}
+
+		#releases.tpReleaseList .tpReleaseSelected a .tpThumbnail {
+			border-color: #6a8186 !important;
+		}
+
+		#releases.tpReleaseList .tpReleaseSelected:hover .tpShine {
+			background-color: #6a8186;
+		}
+
+		#releases.tpReleaseList .tpReleaseSelected:hover .tpShine {
+			border-color: #6a8186;
+		}
+
+		#releases.tpReleaseList .tpReleaseSelected:hover a {
+			color: #6a8186;
+		}
+
+		.tpReleaseList ::-webkit-scrollbar {
+			background-color: #131313
+		}
+
+		.tpReleaseList ::-webkit-scrollbar-track {
+			background-color: #131313
+		}
+
+		.tpReleaseList ::-webkit-scrollbar-thumb {
+			background-color: #131313;
+			border-color: #555555
+		}
+
+		.tpReleaseList ::-moz-scrollbar {
+			background-color: #131313
+		}
+
+		.tpReleaseList ::-moz-scrollbar-track {
+			background-color: #131313
+		}
+
+		.tpReleaseList ::-moz-scrollbar-thumb {
+			background-color: #131313;
+			border-color: #555555
+		}
+	</style>
+	<script type="text/javascript" src="./WireWax PDK 5.9 Test Player_files/amcn.ima.2.2.6.min.js"></script>
+	<script type="text/javascript" src="./WireWax PDK 5.9 Test Player_files/amcn.rewrite.min.js"></script>
+	<script type="text/javascript" src="./WireWax PDK 5.9 Test Player_files/ggtp510.js"></script>
+</head>
+
+<body data-gr-c-s-loaded="true">
+	<div class="tpContainer">
+		<div class="tpLayout">
+			<div class="tpPlayer tpControlsHidden" id="player" tp:allowfullscreen="true"
+				tp:skinurl="https://pdk.theplatform.com/current/pdk/skins/glass/glass.json" tp:shownav="false"
+				tp:allowrss="false" tp:layout="&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;layout&gt;
+	&lt;controls&gt;
+		&lt;region id=&quot;tpBottomFloatRegion&quot; alpha=&quot;75&quot; initialHideDelay=&quot;0&quot; autoHideDelay=&quot;2s&quot;&gt;
+			&lt;row&gt;
+				&lt;control id=&quot;tpPlay&quot;/&gt;
+				&lt;control id=&quot;tpVolume&quot;/&gt;
+				&lt;group percentWidth=&quot;100&quot;&gt;
+					&lt;control id=&quot;tpScrubber&quot;/&gt;
+					&lt;spacer/&gt;
+					&lt;control id=&quot;tpCurrentTime&quot;/&gt;
+					&lt;control id=&quot;tpTimeDivider&quot;/&gt;
+					&lt;control id=&quot;tpTotalTime&quot;/&gt;
+					&lt;spacer/&gt;
+				&lt;/group&gt;
+				&lt;control id=&quot;tpCC&quot;/&gt;
+				&lt;control id=&quot;tpButton&quot; label=&quot;Share&quot; showLabel=&quot;true&quot; icon=&quot;none&quot; callback=&quot;amcnPlatform.module.player.toggleShareCard&quot; /&gt;
+				&lt;control id=&quot;tpFullScreen&quot;/&gt;
+			&lt;/row&gt;
+		&lt;/region&gt;
+	&lt;/controls&gt;
+&lt;/layout&gt;"
+				tp:releaseurl="https://link.theplatform.com/s/1RZrUC/media/tNwLuwiNx2e7?manifest=m3u&amp;player=WireWax%20PDK%205.9%20Test%20Player&amp;policy=97945462"
+				tp:autoplay="true" tp:relateditemsurl="https://feed.theplatform.com/f/1RZrUC/LlSh01LhAkS_" tp:allowlink="true"
+				tp:playerurl="https://player.theplatform.com/p/1RZrUC/Iz284JlcINAR/select/media/{mediaPid}"
+				tp:showfulltime="true" tp:controlbackgroundcolor="0x131313" tp:backgroundcolor="0x131313"
+				tp:controlframecolor="0x555555" tp:framecolor="0x555555" tp:textbackgroundcolor="0x131313"
+				tp:controlhighlightcolor="0x242424" tp:controlhovercolor="0xdddddd" tp:loadprogresscolor="0xbebebe"
+				tp:controlselectedcolor="0x6a8186" tp:playprogresscolor="0x6a8186" tp:scrubberframecolor="0x6a8186"
+				tp:controlcolor="0xbebebe" tp:textcolor="0xbebebe" tp:scrubbercolor="0xbebebe" tp:scrubtrackcolor="0xbebebe"
+				tp:pagebackgroundcolor="0x131313" tp:endcard="endCard" tp:loglevel="debug" tp:allowbandwidth="false"
+				tp:plugin1="type=content|url=https://cdn.amcnetworks.com/theplatform/plugins/js/amcn.ima.2.2.6.min.js|debug_mode=true|show_ad_number=false|display_counter=true"
+				tp:plugin2="type=content|url=https://cdn.amcnetworks.com/theplatform/plugins/js/amcn.rewrite.min.js?v=12|default_policy_num=97945462|ssai_policy_num=97433296|priority=1|ssai_policy_name=BBCA+Ad+Policy+-+SSAI+-+STAGE|default_policy_name=BBCA+Policy+-+Playlist"
+				tp:plugin3="type=plugin|url=https://amc350885sec-a.akamaihd.net/thumbnail/AMC_Networks_Stage/653/115/ggtp510.js|apid=P60D13B20-DE38-4A7B-AF64-190CE3BCF6EB|sfcode=dcr"
+				tp:customer="AMCN" style="">
+				<div class="tpBackground" style="background-color: #131313; border-color: #555555"></div>
+				<div class="player" id="player26929">
+					<div class="tpVideo" id="player26929.player"
+						style="z-index: 795; position: absolute; width: 100%; height: 100%; overflow: hidden;">
+						<div id="player26929.content"
+							style="width: 480px; height: 270px; background-color: rgb(19, 19, 19); padding: 0px; margin: 0px; top: 0px; left: 0px; position: absolute;">
+							<video style="height: 100%; width: 100%;"
+								src="blob:https://player.theplatform.com/91705c9d-d54d-4b3f-8658-90982c81d08d"></video></div>
+					</div>
+					<div class="tpVideoBlocker" id="player26929.controlBlocker"
+						style="z-index: 796; position: absolute; background-color: transparent; height: 100%; width: 100%; overflow: hidden;">
+						<a style="width: 100%; height: 100%; background: transparent; display: block; cursor: default;"></a></div>
+					<div class="tpPlugins" id="player26929.plugins" style="z-index: 797; position: absolute; width: 100%;"></div>
+					<div class="tpBlocker" id="player26929.blocker"
+						style="z-index: 798; position: absolute; background-color: rgb(19, 19, 19); overflow: hidden; height: 270px; width: 480px; top: 0px; left: 0px; display: none;">
+					</div>
+					<div id="player26929.standby"
+						style="width: 480px; height: 270px; position: absolute; z-index: 800; overflow: hidden; pointer-events: none; left: 0px; top: 0px; display: block;">
+						<img class="preview"
+							style="display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: auto;"
+							src="./WireWax PDK 5.9 Test Player_files/Almost_Royal__203_Deleted_Scene_YouTube_Preset_609359939593_mp4_video_1280x720_1800000_primary_audio_5_1280x720_1501762115645.bif">
+						<div id="player26929.standby.playButtonHolder"
+							style="position: absolute; width: 480px; height: 270px; pointer-events: none; display: none; top: 50%; left: 50%; margin-left: -67.5px; margin-top: -67.5px; line-height: 135px;">
+							<canvas style="opacity: 0.7; cursor: pointer; pointer-events: all; display: block;" height="135"
+								width="135"></canvas></div>
+						<div class="tpLoadingIndicator" aria-hidden="true"
+							style="pointer-events: none; user-select: none; cursor: default; width: 100%; height: 100%; display: none;">
+							<canvas width="34" height="34" class="PlayerBufferingIndicatorSkin"
+								style="display: block; width: 34px; height: 34px; position: absolute; z-index: 500; left: 50%; margin-left: 0px; top: 50%; margin-top: 0px; transform: rotate(165deg);"></canvas>
+						</div>
+					</div>
+					<div class="tpSubtitles" id="player26929.subtitles"
+						style="pointer-events: none; z-index: 799; position: relative;">
+						<div style="position: absolute; overflow: hidden; left: 0px; top: 0px; width: 480px; height: 237px;"></div>
+					</div>
+					<div class="tpCards" id="player26929.cards"
+						style="pointer-events: none; z-index: 803; user-select: text; position: absolute; visibility: hidden; width: 480px; height: 270px;">
+						<div style="position: absolute; overflow: hidden; left: 0px; top: 0px; width: 480px; height: 270px;"></div>
+						<div style="position: absolute; overflow: hidden; left: 0px; top: 0px; width: 480px; height: 237px;"></div>
+					</div>
+					<div class="tpOverlays" id="player26929.overlays"
+						style="z-index:802;top:0px;left:0px;pointer-events:none;position:absolute"></div>
+					<div class="tpControls controlsLayer" id="player26929.controls"
+						style="z-index: 801; top: 0px; left: 0px; pointer-events: none; position: absolute; background-color: transparent; float: left; width: 100%; height: 100%;">
+						<div
+							style="position: relative; overflow: hidden; pointer-events: none; user-select: none; cursor: default; opacity: 1; width: 480px; height: 270px;">
+							<div class="tpRegionContainer"
+								style="position: absolute; overflow: hidden; width: 480px; height: 270px; left: 0px; top: 0px;">
+								<div class="LinkedContainer"
+									style="position: absolute; overflow: hidden; pointer-events: none; top: 0px; left: 0px; bottom: 0px; right: 0px; width: 480px; height: 270px;">
+									<div class="tpRegion tpDisabledControlsRegion"
+										style="position: absolute; overflow: hidden; height: 33px; pointer-events: inherit; user-select: none; cursor: default; z-index: 1; opacity: 0; width: 480px; left: 0px; top: 237px;">
+										<div class="tpRow"
+											style="position: absolute; overflow: hidden; pointer-events: inherit; user-select: none; cursor: default; left: 0px; top: 0px; width: 480px; height: 33px;">
+											<canvas width="480" height="33" class="RowSkin"
+												style="display: block; width: 480px; height: 33px; position: absolute; left: 0px; top: 0px;"></canvas>
+											<div class="tpPlay"
+												style="position: absolute; overflow: visible; pointer-events: auto; user-select: none; cursor: pointer; height: 33px; left: 0px; top: 0px; width: 44px; display: block;">
+												<canvas width="44" height="33" class="ButtonSkin"
+													style="display: block; width: 44px; height: 33px; position: absolute; left: 0px; top: 0px;"></canvas>
+												<table cellspacing="0" cellpadding="0"
+													style="position: relative; left: 0px; top: 0px; margin-right: auto; margin-left: auto; height: 33px;">
+													<tbody>
+														<tr>
+															<td align="center" style="vertical-align: middle;"><canvas width="14" height="14"
+																	class="IconPlay" style="display: block; width: 14px; height: 14px;"></canvas></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="tpMute"
+												style="position: absolute; overflow: visible; pointer-events: auto; user-select: none; cursor: pointer; height: 33px; left: 43px; top: 0px; width: 44px; display: block;">
+												<canvas width="44" height="33" class="ButtonSkin"
+													style="display: block; width: 44px; height: 33px; position: absolute; left: 0px; top: 0px;"></canvas>
+												<table cellspacing="0" cellpadding="0"
+													style="position: relative; left: 0px; top: 0px; margin-right: auto; margin-left: auto; height: 33px;">
+													<tbody>
+														<tr>
+															<td align="center" style="vertical-align: middle;"><canvas width="22" height="13"
+																	class="IconMuted" style="display: block; width: 22px; height: 13px;"></canvas></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="tpGroup"
+												style="position: absolute; overflow: hidden; height: 33px; pointer-events: auto; user-select: none; cursor: default; width: 298px; left: 86px; top: 0px;">
+												<canvas width="298" height="33" class="GroupSkin"
+													style="display: block; width: 298px; height: 33px; position: absolute; left: 0px; top: 0px;"></canvas>
+												<div class="tpScrubber"
+													style="position: absolute; overflow: hidden; pointer-events: auto; user-select: none; cursor: pointer; width: 186px; height: 33px; left: 0px; top: 0px;">
+													<canvas width="186" height="33" class="ScrubberSkin"
+														style="display: block; width: 186px; height: 33px; position: absolute; left: 0px; top: 0px;"></canvas>
+													<div
+														style="position: relative; overflow: hidden; pointer-events: auto; user-select: none; cursor: default; width: 186px; height: 33px;">
+														<div
+															style="position: absolute; overflow: hidden; left: 0px; top: 0px; width: 186px; height: 33px;">
+															<canvas width="186" height="33" class="ScrubberTrackSkin"
+																style="display: block; width: 186px; height: 33px; position: absolute; left: 0px; top: 0px;"></canvas>
+														</div>
+														<div
+															style="position: absolute; overflow: hidden; left: 0px; top: 0px; width: 186px; height: 33px;">
+															<canvas width="6" height="33" class="ScrubberLoadedSkin"
+																style="display: block; width: 6px; height: 33px; position: absolute; left: 0px; top: 0px;"></canvas>
+														</div>
+														<div
+															style="position: absolute; overflow: hidden; left: 0px; top: 0px; display: block; width: 186px; height: 33px;">
+															<canvas width="0" height="33" class="ScrubberProgressSkin"
+																style="display: block; width: 0px; height: 33px; position: absolute; left: 0px; top: 0px; transform: scale(1);"></canvas>
+														</div>
+														<div
+															style="position: absolute; overflow: hidden; left: 0px; top: 0px; width: 186px; height: 33px;">
+															<canvas width="1" height="31" class="ScrubberThumbSkin"
+																style="display: block; width: 1px; height: 31px; position: absolute; left: 1px; top: 1px;"></canvas>
+														</div>
+														<div
+															style="position: absolute; overflow: hidden; left: 0px; top: 0px; width: 186px; height: 33px;">
+														</div>
+														<div
+															style="position: absolute; overflow: hidden; background-color: black; opacity: 0.01; z-index: 60; left: 0px; top: 0px; width: 186px; height: 33px;">
+														</div>
+													</div>
+												</div>
+												<div class="undefined"
+													style="position: absolute; overflow: hidden; pointer-events: auto; user-select: none; cursor: default; width: 15px; height: 15px; left: 186px; top: 9px;">
+												</div>
+												<table cellspacing="0" cellpadding="0"
+													style="margin-right: auto; margin-left: auto; position: absolute; pointer-events: auto; user-select: none; cursor: default; left: 201px; top: 9px;">
+													<tbody>
+														<tr>
+															<td align="left" style="vertical-align: middle;">
+																<div class="PlayerLabelFont" unselectable="on"
+																	style="padding-left: 2px; padding-right: 2px; line-height: 14px; white-space: nowrap; font-size: 14px;">
+																	0:01</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<table cellspacing="0" cellpadding="0"
+													style="margin-right: auto; margin-left: auto; position: absolute; pointer-events: auto; user-select: none; cursor: default; left: 236px; top: 9px;">
+													<tbody>
+														<tr>
+															<td align="left" style="vertical-align: middle;">
+																<div class="PlayerLabelFont" unselectable="on"
+																	style="padding-left: 2px; padding-right: 2px; line-height: 14px; white-space: nowrap; font-size: 14px;">
+																	/ </div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<table cellspacing="0" cellpadding="0"
+													style="margin-right: auto; margin-left: auto; position: absolute; pointer-events: auto; user-select: none; cursor: default; left: 248px; top: 9px;">
+													<tbody>
+														<tr>
+															<td align="left" style="vertical-align: middle;">
+																<div class="PlayerLabelFont" unselectable="on"
+																	style="padding-left: 2px; padding-right: 2px; line-height: 14px; white-space: nowrap; font-size: 14px;">
+																	5:07</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<div class="undefined"
+													style="position: absolute; overflow: hidden; pointer-events: auto; user-select: none; cursor: default; width: 15px; height: 15px; left: 283px; top: 9px;">
+												</div>
+											</div>
+											<div aria-hidden="true" class="tpCC"
+												style="position: absolute; overflow: visible; pointer-events: auto; user-select: none; cursor: pointer; display: none; height: 33px; left: -148px; top: 16px;">
+											</div>
+											<div class="tpButton"
+												style="position: absolute; overflow: visible; pointer-events: auto; user-select: none; cursor: pointer; height: 33px; left: 383px; top: 0px; width: 54px;">
+												<canvas width="54" height="33" class="ButtonSkin"
+													style="display: block; width: 54px; height: 33px; position: absolute; left: 0px; top: 0px;"></canvas>
+												<table cellspacing="1" cellpadding="0"
+													style="position: relative; left: 0px; top: 0px; margin-right: auto; margin-left: auto; height: 33px; padding-left: 5px; padding-right: 5px;">
+													<tbody>
+														<tr>
+															<td align="left" style="vertical-align: middle;">
+																<div class="PlayerLabelFont PlayerControlLabelFont"
+																	style="padding-left: 2px; padding-right: 2px;">Share</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="tpFullScreen"
+												style="position: absolute; overflow: visible; pointer-events: auto; user-select: none; cursor: pointer; height: 33px; left: 436px; top: 0px; width: 44px; display: block;">
+												<canvas width="44" height="33" class="ButtonSkin"
+													style="display: block; width: 44px; height: 33px; position: absolute; left: 0px; top: 0px;"></canvas>
+												<table cellspacing="0" cellpadding="0"
+													style="position: relative; left: 0px; top: 0px; margin-right: auto; margin-left: auto; height: 33px;">
+													<tbody>
+														<tr>
+															<td align="center" style="vertical-align: middle;"><canvas width="22" height="19"
+																	class="IconFullscreen" style="display: block; width: 22px; height: 19px;"></canvas>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div style="position: absolute; overflow: hidden; left: 0px; top: 0px; width: 480px; height: 237px;">
+									</div>
+								</div>
+							</div>
+							<div style="position: relative; overflow: hidden; left: 0px; width: 480px; height: 270px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tpReleaseList" id="releases" tp:allowscrolling="false" tp:columns="1" tp:itemsperpage="10"
+				tp:playall="false" tp:autoload="true" tp:autoplay="false" tp:showairdate="false" tp:showauthor="false"
+				tp:showbitrate="false" tp:showdescription="true" tp:showformat="false" tp:showlength="true"
+				tp:showthumbnail="false" tp:showtitle="true"
+				tp:skinurl="https://pdk.theplatform.com/current/pdk/skins/glass/glass.json" tp:thumbnailwidth="160"
+				tp:thumbnailheight="90" tp:backgroundcolor="0x131313" tp:thumbnailbackgroundcolor="0x131313"
+				tp:framecolor="0x555555" tp:itembackgroundcolor="0x131313" tp:itembackgroundhovercolor="0x131313"
+				tp:itembackgroundselectedcolor="0x131313" tp:textframecolor="0x242424" tp:thumbnailframecolor="0x242424"
+				tp:itemframecolor="0x242424" tp:thumbnailhighlighthovercolor="0xdddddd" tp:itemshinehovercolor="0xdddddd"
+				tp:texthighlighthovercolor="0xdddddd" tp:texthovercolor="0xdddddd" tp:thumbnailpaddingcolor="0x131313"
+				tp:thumbnailhighlightselectedcolor="0x6a8186" tp:itemshineselectedcolor="0x6a8186"
+				tp:textselectedcolor="0x6a8186" tp:textcolor="0xbebebe" tp:textbackgroundcolor="0x131313"
+				tp:texthighlightselectedcolor="0x6a8186" tp:pagebackgroundcolor="0x131313">
+				<div class="tpBackground" style="background-color: rgb(19, 19, 19); border-color: rgb(85, 85, 85);"></div>
+				<div class="tpBackgroundShine tpGradient"></div>
+				<ul class="tpGrid" style="margin-top: 0px;"></ul>
+			</div>
+			<div class="tpReleaseModel" id="tpReleaseModel1" tp:startindex="1" tp:endindex="10"
+				tp:params="params=policy%3D97945462%26manifest%3Dm3u%26player%3DWireWax%2520PDK%25205.9%2520Test%2520Player"
+				tp:shuffle="false" tp:feedsserviceurl="https://feed.theplatform.com/f/1RZrUC/LlSh01LhAkS_">
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="./WireWax PDK 5.9 Test Player_files/hls.min.js"></script>
+	<div style="display: none">
+		<!-- tpMenuCard -->
+
+
+		<!-- tpRssCard -->
+
+
+		<!-- tpInfoCard -->
+
+
+		<!-- tpErrorCard -->
+
+
+		<!-- tpShareCard -->
+
+
+		<!-- login card-->
+
+
+
+
+
+
+
+	</div>
+</body>
+
+</html>
