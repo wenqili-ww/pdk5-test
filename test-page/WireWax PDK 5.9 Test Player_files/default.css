@@ -1,6 +1,6 @@
 .tpControlsHidden,
 .tpControlsHidden * {
-	cursor: none!important;
+/* 	cursor: none!important; */
 }
 
 .tpControlsHidden video {
