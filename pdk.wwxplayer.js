@@ -14,7 +14,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
 			self.disableRenditionController = true;
 			self.forceVideoElementContainerAsResizeReference = true;
 			globals.HIDE_SCRUBBER = false;
-			globals.PLAY_ON_WIDGET_CLOSE = false;
+			// globals.PLAY_ON_WIDGET_CLOSE = false;
 
 			self.player = $pdk.controller;
 
