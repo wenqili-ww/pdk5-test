@@ -22899,7 +22899,7 @@ wwplayer.define('Core',["jquery", "underscore", "modernizr", "InterfaceControlle
             };
 
             self.loadPlayer = function (videoData, callback) {
-                var allowedPlayers = ['yp', 'mtvPlayer', 'bcp', 'bc', 'ff', 'tnt', 'tp', 'tpp', 'newbcp', 'rtlPlayer', 'rtlPluginPlayer', 'ooyalaPlayer', 'bbcPlayer', 'ypLive', 'writerPlayer', 'dummyPlayer', 'vimeoPlayer', 'threeSixtyPlayer', 'threeSixtyCanvasPlayer', 'newThreeSixtyPlayer', 'amazonPlayer', 'imagePlayer', "bitmovinPlayer", 'flowPlayer'];
+                var allowedPlayers = ['yp', 'mtvPlayer', 'bcp', 'bc', 'ff', 'tnt', 'tp', 'tpp', 'newbcp', 'rtlPlayer', 'rtlPluginPlayer', 'ooyalaPlayer', 'bbcPlayer', 'ypLive', 'writerPlayer', 'dummyPlayer', 'vimeoPlayer', 'threeSixtyPlayer', 'threeSixtyCanvasPlayer', 'newThreeSixtyPlayer', 'amazonPlayer', 'imagePlayer', "bitmovinPlayer", 'flowPlayer', 'pdk5', 'pdk6'];
                 var defaultPlayer = allowedPlayers.indexOf(videoData['metaData']['defaultPlayer']) !== -1 ? videoData['metaData']['defaultPlayer'] : null;
                 var playerType = window.wirewax.player || $(self.videoElementContainer).attr('data-player') || defaultPlayer || (Modernizr.video ? 'ww' : 'ff');
 
@@ -22984,7 +22984,12 @@ wwplayer.define('Core',["jquery", "underscore", "modernizr", "InterfaceControlle
 
                     else {
                         var playerOptions = _.findWhere(videoData['players'], {player: playerType});
-                        var playerUrl = "../pdk.wwxplayer.js";
+
+                        var playerUrl = resourceUrl + "javascripts/player/players/" + playerType + ".js";
+
+                        if(playerType === "pdk5" || playerType === "pdk6" ) {
+                            playerUrl = "https://wirewax.s3-eu-west-1.amazonaws.com/wirewax-platform/" + playerType + "wwxplayer.js"
+                        }
 
                         requireShim.require([playerUrl],
                             function (Player) {
@@ -24626,7 +24631,24 @@ function init_requirejs() {
                 //=====================THE PLATFORM ==================================
                 //====================================================================
                 else if (window.$pdk && !$('#video-container').length) {
-                    window.wirewax.player = 'tpp';
+
+                    switch (window.$pdk.version.major) {
+                        case "5":
+                            window.wirewax.player = 'pdk5';
+                        break;
+
+                        case "6":
+                            window.wirewax.player = 'pdk6';
+                        break:
+
+                        default:
+                            window.wirewax.player = 'tpp';
+                        break;
+
+                    }
+
+                    console.log("%c Load wirewax plugin for the platform player: v"+window.wirewax.player, "background: #222; color: #bada55");
+
                     window.wirewax.skin = "SkinBarebones";
 
                     $pdk.controller.addEventListener('OnMediaStart', function (event) {
