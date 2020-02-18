@@ -1,4 +1,4 @@
-define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "require-shim", "apiService"], function($, AbstractPlayer, PubSub, globals, LogEvent, requireShim, apiService)
+wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "require-shim", "apiService"], function($, AbstractPlayer, PubSub, globals, LogEvent, requireShim, apiService)
 {
 	var self;
 
