@@ -22988,7 +22988,7 @@ wwplayer.define('Core',["jquery", "underscore", "modernizr", "InterfaceControlle
                         var playerUrl = resourceUrl + "javascripts/player/players/" + playerType + ".js";
 
                         if(playerType === "pdk5" || playerType === "pdk6" ) {
-                            playerUrl = "https://wirewax.s3-eu-west-1.amazonaws.com/wirewax-platform/" + playerType + "wwxplayer.js"
+                            playerUrl = "https://wirewax.s3-eu-west-1.amazonaws.com/wirewax-platform/" + playerType + ".wwxplayer.js"
                         }
 
                         requireShim.require([playerUrl],
