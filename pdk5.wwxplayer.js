@@ -1,5 +1,6 @@
 wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "require-shim", "apiService"], function($, AbstractPlayer, PubSub, globals, LogEvent, requireShim, apiService)
 {
+	console.log("%c WWX player instance for PDK5", "background: #222; color: #bada55")
 	var self;
 
 	var Player = AbstractPlayer.extend({

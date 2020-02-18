@@ -24639,7 +24639,7 @@ function init_requirejs() {
 
                         case "6":
                             window.wirewax.player = 'pdk6';
-                        break:
+                        break;
 
                         default:
                             window.wirewax.player = 'tpp';
