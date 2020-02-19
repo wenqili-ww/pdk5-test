@@ -24634,7 +24634,11 @@ function init_requirejs() {
 
                     switch (window.$pdk.version.major) {
                         case "5":
-                            window.wirewax.player = 'pdk5';
+                            if (window.$pdk.version.minor === "9") {
+                                window.wirewax.player = 'pdk5';
+                            } else {
+                                window.wirewax.player = 'tpp';
+                            }
                         break;
 
                         case "6":
