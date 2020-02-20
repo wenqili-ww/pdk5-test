@@ -47669,7 +47669,7 @@ function init_requirejs() {
 
                     $pdk.controller.addEventListener("OnMediaStart", function(event) {
                         var mediaId = window.wirewax.player === "pdk6" ? event.data.contentID : event.data.baseClip.contentID;
-                        console.log(mediaId);
+                        console.log("This video is using " + window.wirewax.player + ", media ID: " + mediaId);
                         apiService.getVidIdFromThePlatform(
                             mediaId,
                             function(wwVidId) {
@@ -47687,6 +47687,8 @@ function init_requirejs() {
                                     $(wireWaxElement).attr("data-vidid", window.wirewax.vidId);
                                     self.vidId = window.wirewax.vidId;
                                     loadCore(wireWaxElement[0], self.vidId);
+                                }else {
+                                    console.error("WIREWAX video ID is NOT provided in s3/ww4player/thePlatformData");
                                 }
                             },
                             function() {
