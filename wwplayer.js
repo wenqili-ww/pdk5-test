@@ -47667,13 +47667,16 @@ function init_requirejs() {
                     window.wirewax.skin = "SkinBarebones";
 
                     $pdk.controller.addEventListener("OnMediaStart", function(event) {
-                        var mediaId = event.data.baseClip.contentID;
+                        var mediaId = window.wirewax.player === "pdk6" ? event.data.contentID : event.data.baseClip.contentID;
+                        console.log(mediaId);
                         apiService.getVidIdFromThePlatform(
                             mediaId,
                             function(wwVidId) {
+                                console.log(wwVidId);
                                 if (wwVidId) {
                                     window.wirewax.vidId = wwVidId;
-                                    var wireWaxElement = $(".tpVideoBlocker");
+                                    var targetContainerClass = window.wirewax.player === "pdk6" ? ".tpCards" : ".tpVideoBlocker";
+                                    var wireWaxElement = $(targetContainerClass);
                                     wireWaxElement.attr("id", "video-container");
                                     wireWaxElement.css({
                                         height: "100%",
