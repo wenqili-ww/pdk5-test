@@ -44,7 +44,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
                 }
             });
 
-            $pdk.controller.addEventListener("OnMediaSeek", function(event) {
+            $pdk.controller.addEventListener("OnMediaSeekStart", function(event) {
                 self.playProgress = event.data.clip.currentMediaTime;
             });
 
