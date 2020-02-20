@@ -54,7 +54,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
                 }
             });
 
-            $pdk.controller.addEventListener("OnPlayerPause", function(event) {
+            $pdk.controller.addEventListener("OnMediaPause", function(event) {
                 self.PDKPlaying = false;
                 if (self.wwxIsPlaying) {
                     self.pause();
