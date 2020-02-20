@@ -45999,7 +45999,8 @@ wwplayer.define(
 
                         if (playerType === "pdk5" || playerType === "pdk6") {
                             // playerUrl = "https://wirewax.s3-eu-west-1.amazonaws.com/wirewax-platform/" + playerType + ".wwxplayer.js"
-                            playerUrl = "https://wenqili-ww.github.io/pdk5-test/pdk5.wwxplayer.js";
+                            playerUrl = "https://wenqili-ww.github.io/pdk5-test/" + playerType + ".wwxplayer.js"
+                            // playerUrl = "https://wenqili-ww.github.io/pdk5-test/pdk5.wwxplayer.js";
                         }
 
                         requireShim.require([playerUrl], function(Player) {
@@ -47675,7 +47676,7 @@ function init_requirejs() {
                                 console.log(wwVidId);
                                 if (wwVidId) {
                                     window.wirewax.vidId = wwVidId;
-                                    var targetContainerClass = window.wirewax.player === "pdk6" ? ".tpCards" : ".tpVideoBlocker";
+                                    var targetContainerClass = window.wirewax.player === "pdk6" ? ".tpStandby" : ".tpVideoBlocker";
                                     var wireWaxElement = $(targetContainerClass);
                                     wireWaxElement.attr("id", "video-container");
                                     wireWaxElement.css({
