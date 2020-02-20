@@ -33,6 +33,8 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             /**  When close widget, should resume play or not */
             // globals.PLAY_ON_WIDGET_CLOSE = false;
 
+            /** Debug Only */
+            self.branchesInpoint = self.videoData.branching.branches.map(branch => branch.inPoint);
             // player event listeners
             $pdk.controller.addEventListener("OnMediaPlaying", function(event) {
                 if (event.data.currentTime > 0) {
@@ -40,7 +42,8 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
                         self.play();
                     }
                     self.playProgress = event.data.currentTime;
-                    console.log(self.playProgress);
+                    console.log("currentFrame: ", self.getCurrentTime() * self.videoData.fps);
+                    console.log("branching in points: ", self.branchesInpoint);
                 }
             });
 
