@@ -50,6 +50,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
 
             $pdk.controller.addEventListener("OnPlayerUnPause", function(event) {
                 if (!self.wwxIsPlaying) {
+                    PubSub.publish(globals.CLOSE_WIDGET);
                     self.play();
                 }
             });
@@ -96,7 +97,6 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
 
                 self.playerState = 1;
                 this._super();
-
                 PubSub.publish(globals.HIDE_LOADER);
             } catch (err) {
                 console.log("play error", err);
