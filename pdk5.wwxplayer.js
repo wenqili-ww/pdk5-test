@@ -50,7 +50,6 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
 
             $pdk.controller.addEventListener("OnPlayerUnPause", function(event) {
                 if (!self.wwxIsPlaying) {
-                    PubSub.publish(globals.CLOSE_WIDGET);
                     self.play();
                 }
             });
