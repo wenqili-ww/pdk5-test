@@ -138,7 +138,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             self.lastSeekedTo = seekedToFrame;
             self.frameSubscriptionsHit = [];
             PubSub.publish(globals.CURRENT_TIME_SET, currentTime * 1000);
-            $pdk.controller.seekToPosition(currentTime * 1000);
+            $pdk.controller.seekTo(currentTime * 1000);
             self.seeked(currentTime);
         },
 
