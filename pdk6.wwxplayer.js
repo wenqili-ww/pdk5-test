@@ -33,8 +33,6 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             /**  When close widget, should resume play or not */
             // globals.PLAY_ON_WIDGET_CLOSE = false;
 
-            /** Debug Only */
-            self.branchesInpoint = self.videoData.branching.branches.map(branch => branch.inPoint);
             // player event listeners
             $pdk.controller.addEventListener("OnMediaPlaying", function(event) {
                 if (event.data.currentTime > 0) {
@@ -207,6 +205,9 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
                     window.clearInterval(waitForPlayer);
                     self.mainLoop();
                     superFn();
+
+                    /** Debug Only */
+                    self.branchesInpoint = self.videoData.branching.branches.map(branch => branch.inPoint);
                 }
             }, 1000);
         }
