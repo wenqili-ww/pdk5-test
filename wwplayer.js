@@ -47687,12 +47687,12 @@ function init_requirejs() {
                                     $(wireWaxElement).attr("data-vidid", window.wirewax.vidId);
                                     self.vidId = window.wirewax.vidId;
                                     loadCore(wireWaxElement[0], self.vidId);
-                                }else {
-                                    console.error("WIREWAX video ID is NOT provided in s3/ww4player/thePlatformData");
                                 }
+                                
                             },
                             function() {
                                 // Probably a 404, don't don't load
+                                console.error("WIREWAX video ID is NOT provided in s3/ww4player/thePlatformData");
                             }
                         );
                     });
