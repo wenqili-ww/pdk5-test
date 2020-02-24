@@ -9,6 +9,27 @@
     "background: #222; color: #bada55"
   );
 
+  $pdk.controller.addEventListener("OnMediaStart", function(event) {
+    console.log(event);
+  }
+
+  $pdk.plugin.wirewax = $pdk.extend(function() {}, {
+    constructor: function() {
+        console.log("%c PDK WIREWAX plugin constructor", "background: #444; color: #ffff00");
+        this.container = document.createElement("div");
+        this.container.style.position = "relative";
+        this.initialize();
+    },
+    initialize: function(loadObj) {
+      this.loadObj = loadObj || $pdk;
+      console.log("%c PDK WIREWAX plugin init", "background: #444; color: #ffff00");
+      this.controller = loadObj.controller; //?
+  },
+  }
+
+  window.wirewax.waxxerPlugin = new $pdk.plugin.wirewax();
+  $pdk.controller.plugInLoaded(window.wirewax.waxxerPlugin, window.wirewax.waxxerPlugin.container);
+
   if (window.wirewax && window.wirewax.loadedAsPlugin) {
     // Don't load the player for a second time if we're on brightcove
     return;
