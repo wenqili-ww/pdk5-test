@@ -47671,6 +47671,7 @@ function init_requirejs() {
                             console.log("%c PDK WIREWAX plugin constructor", "background: #444; color: #ffff00");
                             this.container = document.createElement("div");
                             this.container.style.position = "relative";
+                            this.initialize();
                         },
 
                         initialize: function(loadObj) {
