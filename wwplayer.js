@@ -47676,7 +47676,7 @@ function init_requirejs() {
 
                         initialize: function(loadObj) {
                             console.log("%c PDK WIREWAX plugin init", "background: #444; color: #ffff00");
-                            this.controller = loadObj.controller;
+                            this.controller = $pdk.controller; //?
                             this.registerPdkEvents();
 
                         },
