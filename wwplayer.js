@@ -47666,34 +47666,10 @@ function init_requirejs() {
                     console.log("%c Load wirewax plugin for the platform player: v" + window.wirewax.player, "background: #222; color: #bada55");
 
                     window.wirewax.skin = "SkinBarebones";
-                    $pdk.plugin.wirewax = $pdk.extend(function() {}, {
-                        constructor: function() {
-                            console.log("%c PDK WIREWAX plugin constructor", "background: #444; color: #ffff00");
-                            this.container = document.createElement("div");
-                            this.container.style.position = "relative";
-                            this.initialize();
-                        },
-
-                        initialize: function(loadObj) {
-                            console.log("%c PDK WIREWAX plugin init", "background: #444; color: #ffff00");
-                            this.controller = $pdk.controller; //?
-                            this.registerPdkEvents();
-
-                        },
-
-                        registerPdkEvents: function(){
-                            console.log("%c PDK WIREWAX plugin register events", "background: #444; color: #ffff00");
-                            this.controller.addEventListener("OnMediaStart", function(event) {
-                                console.log("%c PDK WIREWAX plugin register OnMediaStart events", "background: #444; color: #ffff00");
-                            })
-                        }
-
-                    });
-                    var waxxerPlugin = new $pdk.plugin.wirewax();
-                    waxxerPlugin.controller.addEventListener("OnMediaStart", function(event){
+                   
+                    window.wirewax.waxxerPlugin.controller.addEventListener("OnMediaStart", function(event){
                         console.log("%c PDK WIREWAX plugin register OnMediaStart events", "background: #444; color: #ffff00");
                     })
-                    $pdk.controller.plugInLoaded(waxxerPlugin, waxxerPlugin.container);
 
                     $pdk.controller.addEventListener("OnMediaStart", function(event) {
                         var mediaId = window.wirewax.player === "pdk6" ? event.data.contentID : event.data.baseClip.contentID;
