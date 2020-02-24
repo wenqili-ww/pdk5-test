@@ -47676,14 +47676,14 @@ function init_requirejs() {
 
                         initialize: function(loadObj) {
                             console.log("%c PDK WIREWAX plugin init", "background: #444; color: #ffff00");
-                            this.controller = $pdk.controller; //?
-                            this.registerPdkEvents();
+                            waxxerPlugin.controller = $pdk.controller; //?
+                            waxxerPlugin.registerPdkEvents();
 
                         },
 
                         registerPdkEvents: function(){
                             console.log("%c PDK WIREWAX plugin register events", "background: #444; color: #ffff00");
-                            this.controller.addEventListener("OnMediaStart", function(event) {
+                            waxxerPlugin.controller.addEventListener("OnMediaStart", function(event) {
                                 console.log("%c PDK WIREWAX plugin register OnMediaStart events", "background: #444; color: #ffff00");
                             })
                         }
