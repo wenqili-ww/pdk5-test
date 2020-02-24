@@ -45999,7 +45999,7 @@ wwplayer.define(
 
                         if (playerType === "pdk5" || playerType === "pdk6") {
                             // playerUrl = "https://wirewax.s3-eu-west-1.amazonaws.com/wirewax-platform/" + playerType + ".wwxplayer.js"
-                            playerUrl = "https://wenqili-ww.github.io/pdk5-test/" + playerType + ".wwxplayer.js"
+                            playerUrl = "https://wenqili-ww.github.io/pdk5-test/" + playerType + ".wwxplayer.js";
                             // playerUrl = "https://wenqili-ww.github.io/pdk5-test/pdk5.wwxplayer.js";
                         }
 
@@ -47666,13 +47666,28 @@ function init_requirejs() {
                     console.log("%c Load wirewax plugin for the platform player: v" + window.wirewax.player, "background: #222; color: #bada55");
 
                     window.wirewax.skin = "SkinBarebones";
-                    $pdk.plugin.wirewax = $pdk.extend(function(){}, {
+                    $pdk.plugin.wirewax = $pdk.extend(function() {}, {
                         constructor: function() {
-                            console.log("PDK WIREWAX plugin")
+                            console.log("%c PDK WIREWAX plugin constructor", "background: #444; color: #ffff00");
                             this.container = document.createElement("div");
                             this.container.style.position = "relative";
+                        },
+
+                        initialize: function(loadObj) {
+                            console.log("%c PDK WIREWAX plugin init", "background: #444; color: #ffff00");
+                            this.controller = loadObj.controller;
+                            this.registerPdkEvents();
+
+                        },
+
+                        registerPdkEvents: function(){
+                            console.log("%c PDK WIREWAX plugin register events", "background: #444; color: #ffff00");
+                            controller.addEventListener("OnMediaStart", function(event) {
+                                console.log("%c PDK WIREWAX plugin register OnMediaStart events", "background: #444; color: #ffff00");
+                            })
                         }
-                    })
+
+                    });
                     var waxxerPlugin = new $pdk.plugin.wirewax();
                     $pdk.controller.plugInLoaded(waxxerPlugin, waxxerPlugin.container);
 
@@ -47697,7 +47712,6 @@ function init_requirejs() {
                                     self.vidId = window.wirewax.vidId;
                                     loadCore(wireWaxElement[0], self.vidId);
                                 }
-                                
                             },
                             function() {
                                 // Probably a 404, don't don't load
