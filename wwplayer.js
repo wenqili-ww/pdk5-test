@@ -47682,7 +47682,7 @@ function init_requirejs() {
 
                         registerPdkEvents: function(){
                             console.log("%c PDK WIREWAX plugin register events", "background: #444; color: #ffff00");
-                            controller.addEventListener("OnMediaStart", function(event) {
+                            this.controller.addEventListener("OnMediaStart", function(event) {
                                 console.log("%c PDK WIREWAX plugin register OnMediaStart events", "background: #444; color: #ffff00");
                             })
                         }
