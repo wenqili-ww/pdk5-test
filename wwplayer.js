@@ -47676,20 +47676,23 @@ function init_requirejs() {
 
                         initialize: function(loadObj) {
                             console.log("%c PDK WIREWAX plugin init", "background: #444; color: #ffff00");
-                            waxxerPlugin.controller = $pdk.controller; //?
-                            waxxerPlugin.registerPdkEvents();
+                            this.controller = $pdk.controller; //?
+                            this.registerPdkEvents();
 
                         },
 
                         registerPdkEvents: function(){
                             console.log("%c PDK WIREWAX plugin register events", "background: #444; color: #ffff00");
-                            waxxerPlugin.controller.addEventListener("OnMediaStart", function(event) {
+                            this.controller.addEventListener("OnMediaStart", function(event) {
                                 console.log("%c PDK WIREWAX plugin register OnMediaStart events", "background: #444; color: #ffff00");
                             })
                         }
 
                     });
                     var waxxerPlugin = new $pdk.plugin.wirewax();
+                    waxxerPlugin.controller.addEventListener("OnMediaStart", function(event){
+                        console.log("%c PDK WIREWAX plugin register OnMediaStart events", "background: #444; color: #ffff00");
+                    })
                     $pdk.controller.plugInLoaded(waxxerPlugin, waxxerPlugin.container);
 
                     $pdk.controller.addEventListener("OnMediaStart", function(event) {
