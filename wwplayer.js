@@ -45999,7 +45999,7 @@ wwplayer.define(
 
                         if (playerType === "pdk5" || playerType === "pdk6") {
                             // playerUrl = "https://wirewax.s3-eu-west-1.amazonaws.com/wirewax-platform/" + playerType + ".wwxplayer.js"
-                            playerUrl = "https://wenqili-ww.github.io/pdk5-test/" + playerType + ".wwxplayer.js";
+                            playerUrl = "https://wenqili-ww.github.io/pdk5-test/" + playerType + ".wwxplayer.js"
                             // playerUrl = "https://wenqili-ww.github.io/pdk5-test/pdk5.wwxplayer.js";
                         }
 
@@ -47666,8 +47666,17 @@ function init_requirejs() {
                     console.log("%c Load wirewax plugin for the platform player: v" + window.wirewax.player, "background: #222; color: #bada55");
 
                     window.wirewax.skin = "SkinBarebones";
+                    $pdk.plugin.wirewax = $pdk.extend(function(){}, {
+                        constructor: function() {
+                            console.log("PDK WIREWAX plugin")
+                            this.container = document.createElement("div");
+                            this.container.style.position = "relative";
+                        }
+                    })
+                    var waxxerPlugin = new $pdk.plugin.wirewax();
+                    $pdk.controller.plugInLoaded(waxxerPlugin, waxxerPlugin.container);
 
-                    $pdk.controller.addEventListener("OnMediaPause", function(event) {
+                    $pdk.controller.addEventListener("OnMediaStart", function(event) {
                         var mediaId = window.wirewax.player === "pdk6" ? event.data.contentID : event.data.baseClip.contentID;
                         console.log("This video is using " + window.wirewax.player + ", media ID: " + mediaId);
                         apiService.getVidIdFromThePlatform(
@@ -47688,6 +47697,7 @@ function init_requirejs() {
                                     self.vidId = window.wirewax.vidId;
                                     loadCore(wireWaxElement[0], self.vidId);
                                 }
+                                
                             },
                             function() {
                                 // Probably a 404, don't don't load
