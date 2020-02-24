@@ -47667,7 +47667,7 @@ function init_requirejs() {
 
                     window.wirewax.skin = "SkinBarebones";
 
-                    $pdk.controller.addEventListener("OnMediaStart", function(event) {
+                    window.addEventListener("OnMediaStart", function(event) {
                         var mediaId = window.wirewax.player === "pdk6" ? event.data.contentID : event.data.baseClip.contentID;
                         console.log("This video is using " + window.wirewax.player + ", media ID: " + mediaId);
                         apiService.getVidIdFromThePlatform(
