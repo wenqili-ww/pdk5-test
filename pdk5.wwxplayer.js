@@ -19,7 +19,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
 
             self = this;
             self.player = window.wirewax.waxxerPlugin.controller;
-
+            self.container = $( "#waxxer-target" );
             self.controlsUnderVideo = true;
             self.hasOwnPlayButton = true;
             self.hasOwnPauseButton = true;
@@ -34,6 +34,10 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             // globals.PLAY_ON_WIDGET_CLOSE = false;
 
             // player event listeners
+            window.wirewax.waxxerPlugin.controller.addEventListener("OnMediaAreaChanged", function(event) {
+                this.setDimensions();
+            });
+
             window.wirewax.waxxerPlugin.controller.addEventListener("OnMediaPlaying", function(event) {
                 if (event.data.currentTime > 0) {
                     if (!self.startedPlaying) {
@@ -70,6 +74,19 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             window.setTimeout(function() {
                 readyCallback(videoElementContainer);
             }, 50);
+        },
+
+        getDimensions: function() {
+            let mediaArea = window.wirewax.waxxerPlugin.controller.getMediaArea();
+            width = mediaArea.width;
+            height = mediaArea.height;
+            return { width: width, height: height };
+        },
+
+        setDimensions: function() {
+            let mediaArea = this.getDimensions();
+            self.container.width( mediaArea.width );
+            self.container.height( mediaArea.height );
         },
 
         getVolume: function() {
