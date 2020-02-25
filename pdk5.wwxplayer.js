@@ -20,6 +20,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             self = this;
             self.player = window.wirewax.waxxerPlugin.controller;
             self.container = $( "#waxxer-target" );
+            self.setDimensions();
             self.controlsUnderVideo = true;
             self.hasOwnPlayButton = true;
             self.hasOwnPauseButton = true;
@@ -35,7 +36,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
 
             // player event listeners
             window.wirewax.waxxerPlugin.controller.addEventListener("OnMediaAreaChanged", function(event) {
-                this.setDimensions();
+                self.setDimensions();
             });
 
             window.wirewax.waxxerPlugin.controller.addEventListener("OnMediaPlaying", function(event) {
@@ -84,7 +85,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
         },
 
         setDimensions: function() {
-            let mediaArea = this.getDimensions();
+            let mediaArea = self.getDimensions();
             self.container.width( mediaArea.width );
             self.container.height( mediaArea.height );
         },
