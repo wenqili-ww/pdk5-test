@@ -47676,8 +47676,10 @@ function init_requirejs() {
                                 console.log(wwVidId);
                                 if (wwVidId) {
                                     window.wirewax.vidId = wwVidId;
-                                    var targetContainerClass = window.wirewax.player === "pdk6" ? ".tpStandby" : ".tpVideoBlocker";
-                                    var wireWaxElement = $(targetContainerClass);
+                                    var targetContainerClass = window.wirewax.player === "pdk6" ? ".tpStandby" : ".waxxer-target";
+                                    var targetContainer = $(targetContainerClass)
+                                    var wireWaxElement = document.createElement('div');
+                                    targetContainer.append(wireWaxElement);
                                     wireWaxElement.attr("id", "video-container");
                                     wireWaxElement.css({
                                         height: "100%",
