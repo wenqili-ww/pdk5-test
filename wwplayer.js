@@ -47678,8 +47678,8 @@ function init_requirejs() {
                                     window.wirewax.vidId = wwVidId;
                                     var targetContainerClass = window.wirewax.player === "pdk6" ? ".tpStandby" : ".waxxer-target";
                                     var targetContainer = $(targetContainerClass)
-                                    var wireWaxElement = document.createElement('div');
-                                    targetContainer.append(wireWaxElement);
+                                    var wireWaxElement = $("<div></div>");
+                                    targetContainer.append(wireWaxElement)
                                     wireWaxElement.attr("id", "video-container");
                                     wireWaxElement.css({
                                         height: "100%",
