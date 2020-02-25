@@ -47676,7 +47676,7 @@ function init_requirejs() {
                                 console.log(wwVidId);
                                 if (wwVidId) {
                                     window.wirewax.vidId = wwVidId;
-                                    var targetContainerClass = window.wirewax.player === "pdk6" ? ".tpStandby" : ".waxxer-target";
+                                    var targetContainerClass = window.wirewax.player === "pdk6" ? ".tpStandby" : "#waxxer-target";
                                     var targetContainer = $(targetContainerClass)
                                     var wireWaxElement = $("<div></div>");
                                     targetContainer.append(wireWaxElement)
