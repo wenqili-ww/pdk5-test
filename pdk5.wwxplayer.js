@@ -7,7 +7,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
     requireShim,
     apiService
 ) {
-    console.log("%c WWX player instance for PDK 5.9", "background: #222; color: #bada55");
+    console.log("%c WWX player instance for PDK 5.9", "background: #444; color: #ffff00");
 
     let self;
 
@@ -40,7 +40,6 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
                         self.play();
                     }
                     self.playProgress = event.data.currentTime;
-                    console.log(self.playProgress);
                 }
             });
 

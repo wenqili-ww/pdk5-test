@@ -7,7 +7,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
     requireShim,
     apiService
 ) {
-    console.log("%c WWX player instance for PDK 5.9", "background: #222; color: #bada55");
+    console.log("%c WWX player instance for PDK 6", "background: #444; color: #ffff00");
 
     let self;
 
@@ -18,7 +18,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             this._super(videoElementContainer, updateScrubFn, playerOptions, readyCallback, errorCallback, videoData);
 
             self = this;
-            self.player = $pdk.controller;
+            self.player = window.wirewax.waxxerPlugin.controller;
 
             self.controlsUnderVideo = true;
             self.hasOwnPlayButton = true;
@@ -34,7 +34,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             // globals.PLAY_ON_WIDGET_CLOSE = false;
 
             // player event listeners
-            $pdk.controller.addEventListener("OnMediaPlaying", function(event) {
+            window.wirewax.waxxerPlugin.controller.addEventListener("OnMediaPlaying", function(event) {
                 if (event.data.currentTime > 0) {
                     if (!self.startedPlaying) {
                         self.play();
@@ -45,24 +45,24 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
                 }
             });
 
-            $pdk.controller.addEventListener("OnMediaSeekStart", function(event) {
+            window.wirewax.waxxerPlugin.controller.addEventListener("OnMediaSeekStart", function(event) {
                 self.playProgress = event.data.clip.currentMediaTime;
             });
 
-            $pdk.controller.addEventListener("OnPlayerUnPause", function(event) {
+            window.wirewax.waxxerPlugin.controller.addEventListener("OnPlayerUnPause", function(event) {
                 if (!self.wwxIsPlaying) {
                     self.play();
                 }
             });
 
-            $pdk.controller.addEventListener("OnMediaPause", function(event) {
+            window.wirewax.waxxerPlugin.controller.addEventListener("OnMediaPause", function(event) {
                 self.PDKPlaying = false;
                 if (self.wwxIsPlaying) {
                     self.pause();
                 }
             });
 
-            $pdk.controller.addEventListener("OnMediaEnd", function(event) {
+            window.wirewax.waxxerPlugin.controller.addEventListener("OnMediaEnd", function(event) {
                 self.onEnd();
             });
 
@@ -80,7 +80,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
 
         setVolume: function(volume) {
             try {
-                $pdk.controller.setVolume(volume * 100);
+                window.wirewax.waxxerPlugin.controller.setVolume(volume * 100);
                 this._super(volume);
             } catch (err) {
                 this._super(1);
@@ -92,7 +92,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
                 self.wwxIsPlaying = true;
 
                 /** When WWX side play, trigger PDK to play */
-                $pdk.controller.pause(false);
+                window.wirewax.waxxerPlugin.controller.pause(false);
                 $pdk.hasPlayed = true;
 
                 self.playerState = 1;
@@ -109,7 +109,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
 
                 /** When WWX side pause, trigger PDK to pause */
 
-                $pdk.controller.pause(true);
+                window.wirewax.waxxerPlugin.controller.pause(true);
                 self.playerState = 2;
                 this._super();
             } catch (err) {
@@ -139,7 +139,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             self.lastSeekedTo = seekedToFrame;
             self.frameSubscriptionsHit = [];
             PubSub.publish(globals.CURRENT_TIME_SET, currentTime * 1000);
-            $pdk.controller.seekTo(currentTime * 1000);
+            window.wirewax.waxxerPlugin.controller.seekTo(currentTime * 1000);
             self.seeked(currentTime);
         },
 

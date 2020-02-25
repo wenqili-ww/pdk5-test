@@ -47663,17 +47663,17 @@ function init_requirejs() {
                             break;
                     }
 
-                    console.log("%c Load wirewax plugin for the platform player: v" + window.wirewax.player, "background: #222; color: #bada55");
+                    console.log("%c This video is using the platform player " + window.wirewax.player, "background: #444; color: #ffff00");
 
                     window.wirewax.skin = "SkinBarebones";
                    
                     window.wirewax.waxxerPlugin.controller.addEventListener("OnMediaStart", function(event){
-                        var mediaId = window.wirewax.player === "pdk6" ? event.data.contentID : event.data.baseClip.contentID;
-                        console.log("This video is using " + window.wirewax.player + ", media ID: " + mediaId);
+                        var contentID = window.wirewax.player === "pdk6" ? event.data.contentID : event.data.baseClip.contentID;
+                        console.log("PDK content ID: " + contentID);
                         apiService.getVidIdFromThePlatform(
-                            mediaId,
+                            contentID,
                             function(wwVidId) {
-                                console.log(wwVidId);
+                                console.log("Connected to WIREWAX video ID: " + wwVidId);
                                 if (wwVidId) {
                                     window.wirewax.vidId = wwVidId;
                                     var targetContainerClass = window.wirewax.player === "pdk6" ? ".tpStandby" : "#waxxer-target";
