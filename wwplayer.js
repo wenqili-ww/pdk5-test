@@ -44147,7 +44147,7 @@ wwplayer.define("EventManager", ["jquery", "pubsub", "globals", "apiService", "u
                             data = JSON.parse(event.data);
                         } catch (err) {
                             if (data.indexOf("{") != -1 && data.indexOf("inspifm") == -1) {
-                                console.error("Error parsing JSON string", event.data);
+                                // console.error("Error parsing JSON string", event.data);
                             }
                         }
                     }
