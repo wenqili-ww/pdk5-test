@@ -18,7 +18,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             this._super(videoElementContainer, updateScrubFn, playerOptions, readyCallback, errorCallback, videoData);
 
             self = this;
-            self.player = window.wirewax.waxxerPlugin.controller;
+            self.player = window.wirewax.pdkPlugin.controller;
             self.container = $( "#waxxer-target" );
             self.setDimensions();
             self.controlsUnderVideo = true;
@@ -35,11 +35,11 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             // globals.PLAY_ON_WIDGET_CLOSE = false;
 
             // player event listeners
-            window.wirewax.waxxerPlugin.controller.addEventListener("OnMediaAreaChanged", function(event) {
+            window.wirewax.pdkPlugin.controller.addEventListener("OnMediaAreaChanged", function(event) {
                 self.setDimensions();
             });
 
-            window.wirewax.waxxerPlugin.controller.addEventListener("OnMediaPlaying", function(event) {
+            window.wirewax.pdkPlugin.controller.addEventListener("OnMediaPlaying", function(event) {
                 if (event.data.currentTime > 0) {
                     if (!self.startedPlaying) {
                         self.play();
@@ -48,24 +48,24 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
                 }
             });
 
-            window.wirewax.waxxerPlugin.controller.addEventListener("OnMediaSeek", function(event) {
+            window.wirewax.pdkPlugin.controller.addEventListener("OnMediaSeek", function(event) {
                 self.playProgress = event.data.clip.currentMediaTime;
             });
 
-            window.wirewax.waxxerPlugin.controller.addEventListener("OnPlayerUnPause", function(event) {
+            window.wirewax.pdkPlugin.controller.addEventListener("OnPlayerUnPause", function(event) {
                 if (!self.wwxIsPlaying) {
                     self.play();
                 }
             });
 
-            window.wirewax.waxxerPlugin.controller.addEventListener("OnPlayerPause", function(event) {
+            window.wirewax.pdkPlugin.controller.addEventListener("OnPlayerPause", function(event) {
                 self.PDKPlaying = false;
                 if (self.wwxIsPlaying) {
                     self.pause();
                 }
             });
 
-            window.wirewax.waxxerPlugin.controller.addEventListener("OnMediaEnd", function(event) {
+            window.wirewax.pdkPlugin.controller.addEventListener("OnMediaEnd", function(event) {
                 self.onEnd();
             });
 
@@ -78,7 +78,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
         },
 
         getDimensions: function() {
-            let mediaArea = window.wirewax.waxxerPlugin.controller.getMediaArea();
+            let mediaArea = window.wirewax.pdkPlugin.controller.getMediaArea();
             width = mediaArea.width;
             height = mediaArea.height;
             return { width: width, height: height };
@@ -96,7 +96,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
 
         setVolume: function(volume) {
             try {
-                window.wirewax.waxxerPlugin.controller.setVolume(volume * 100);
+                window.wirewax.pdkPlugin.controller.setVolume(volume * 100);
                 this._super(volume);
             } catch (err) {
                 this._super(1);
@@ -108,7 +108,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
                 self.wwxIsPlaying = true;
 
                 /** When WWX side play, trigger PDK to play */
-                window.wirewax.waxxerPlugin.controller.pause(false);
+                window.wirewax.pdkPlugin.controller.pause(false);
                 $pdk.hasPlayed = true;
 
                 self.playerState = 1;
@@ -125,7 +125,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
 
                 /** When WWX side pause, trigger PDK to pause */
 
-                window.wirewax.waxxerPlugin.controller.pause(true);
+                window.wirewax.pdkPlugin.controller.pause(true);
                 self.playerState = 2;
                 this._super();
             } catch (err) {
@@ -155,7 +155,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             self.lastSeekedTo = seekedToFrame;
             self.frameSubscriptionsHit = [];
             PubSub.publish(globals.CURRENT_TIME_SET, currentTime * 1000);
-            window.wirewax.waxxerPlugin.controller.seekToPosition(currentTime * 1000);
+            window.wirewax.pdkPlugin.controller.seekToPosition(currentTime * 1000);
             self.seeked(currentTime);
         },
 
