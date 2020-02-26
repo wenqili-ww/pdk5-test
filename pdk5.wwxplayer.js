@@ -221,6 +221,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
                     window.clearInterval(waitForPlayer);
                     self.mainLoop();
                     superFn();
+                    console.log("%c ::WIREWAX:: WIREWAX Plugin Player loaded", "background: #444; color: #ffff00");
                 }
             }, 1000);
         }

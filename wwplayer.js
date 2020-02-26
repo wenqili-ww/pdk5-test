@@ -47663,17 +47663,17 @@ function init_requirejs() {
                             break;
                     }
 
-                    console.log("%c This video is using the platform player " + window.wirewax.player, "background: #444; color: #ffff00");
+                    console.log("%c ::WIREWAX:: Dependencies loaded in " + window.wirewax.player, "background: #444; color: #ffff00");
 
                     window.wirewax.skin = "SkinBarebones";
                    
                     window.wirewax.waxxerPlugin.controller.addEventListener("OnMediaStart", function(event){
                         var contentID = window.wirewax.player === "pdk6" ? event.data.contentID : event.data.baseClip.contentID;
-                        console.log("PDK content ID: " + contentID);
+                        console.log(" ::WIREWAX:: PDK content ID: " + contentID);
                         apiService.getVidIdFromThePlatform(
                             contentID,
                             function(wwVidId) {
-                                console.log("Connected to WIREWAX video ID: " + wwVidId);
+                                console.log(" ::WIREWAX:: Connected to WIREWAX video ID: " + wwVidId);
                                 if (wwVidId) {
                                     window.wirewax.vidId = wwVidId;
                                     var targetContainerClass = window.wirewax.player === "pdk6" ? ".tpStandby" : "#waxxer-target";
@@ -47693,7 +47693,7 @@ function init_requirejs() {
                             },
                             function() {
                                 // Probably a 404, don't don't load
-                                console.error("WIREWAX video ID is NOT provided in s3/ww4player/thePlatformData");
+                                console.error(" ::WIREWAX:: WIREWAX video ID is NOT provided at s3/ww4player/thePlatformData");
                             }
                         );
                     });
