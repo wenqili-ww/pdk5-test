@@ -47663,7 +47663,7 @@ function init_requirejs() {
                             break;
                     }
 
-                    console.log("%c ::WIREWAX:: Dependencies loaded in " + window.wirewax.player, "background: #444; color: #ffff00");
+                    console.log("%c ::WIREWAX:: WIREWAX Player configured as " + window.wirewax.player, "background: #444; color: #ffff00");
 
                     window.wirewax.skin = "SkinBarebones";
                    

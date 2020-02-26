@@ -1,0 +1,1 @@
+console.log("%c ::WIREWAX:: Patch to stop extra plugins loading thread", "background: #444; color: #ffff00");
