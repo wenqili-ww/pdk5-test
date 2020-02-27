@@ -17056,7 +17056,9 @@ wwplayer.define("Suspender", ["pubsub", "globals", "jquery"], function(PubSub, g
 
         self.suspend = function() {
             if (!self.player.paused()) {
-                PubSub.publish(globals.DO_PAUSE, {origin: "suspend"});
+                if(window.wirewax.player !== "pdk5"){
+                    PubSub.publish(globals.DO_PAUSE, {origin: "suspend"});
+                }
                 self.pauseAtFrame = player.getFrame();
                 self.pausedOnSleep = true;
             } else {
