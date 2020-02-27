@@ -17056,7 +17056,7 @@ wwplayer.define("Suspender", ["pubsub", "globals", "jquery"], function(PubSub, g
 
         self.suspend = function() {
             if (!self.player.paused()) {
-                PubSub.publish(globals.DO_PAUSE);
+                PubSub.publish(globals.DO_PAUSE, {origin: "suspend"});
                 self.pauseAtFrame = player.getFrame();
                 self.pausedOnSleep = true;
             } else {
@@ -47666,7 +47666,7 @@ function init_requirejs() {
                     console.log("%c ::WIREWAX:: WIREWAX Player configured as " + window.wirewax.player, "background: #444; color: #ffff00");
 
                     window.wirewax.skin = "SkinBarebones";
-                   
+
                     window.wirewax.pdkPlugin.controller.addEventListener("OnMediaStart", function(event){
                         var contentID = window.wirewax.player === "pdk6" ? event.data.contentID : event.data.baseClip.contentID;
                         console.log(" ::WIREWAX:: PDK content ID: " + contentID);
