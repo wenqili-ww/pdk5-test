@@ -133,6 +133,12 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             }
         },
 
+        onEnd: function() {
+            self.wwxIsPlaying = false;
+            self.playerState = 2;
+            this._super();
+        },
+
         getFrame: function() {
             try {
                 return Math.floor(self.player.getCurrentTime() * self.videoData.fps);
