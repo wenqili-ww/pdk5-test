@@ -47672,6 +47672,10 @@ function init_requirejs() {
                     window.wirewax.pdkPlugin.controller.addEventListener("OnMediaStart", function(event){
                         var contentID = window.wirewax.player === "pdk6" ? event.data.contentID : event.data.baseClip.contentID;
                         console.log(" ::WIREWAX:: PDK content ID: " + contentID);
+                        if(window.wirewax.vidId) {
+                            // to improve the performance when replay
+                            return
+                        }
                         apiService.getVidIdFromThePlatform(
                             contentID,
                             function(wwVidId) {
