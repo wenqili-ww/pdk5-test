@@ -30,6 +30,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
 
             /** Plugin States */
             self.wwxIsPlaying = false;
+            self.replaySeekFromPDK =true;
 
             /**  When close widget, should resume play or not */
             // globals.PLAY_ON_WIDGET_CLOSE = false;
@@ -45,6 +46,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
                         self.play();
                     }
                     self.playProgress = event.data.currentTime;
+                    console.log("current progress": self.playProgress/1000)
                 }
             });
 
@@ -66,6 +68,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             });
 
             window.wirewax.pdkPlugin.controller.addEventListener("OnMediaEnd", function(event) {
+                self.replaySeekFromPDK = true;
                 if(!self.ended){
                     self.onEnd();
                 }
@@ -158,6 +161,10 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
         },
 
         setCurrentTime: function(eventName, currentTime) {
+            if (self.replaySeekFromPDK) {
+                self.replaySeekFromPDK = false;
+                return
+            }
             let seekedToFrame = Math.ceil(currentTime);
             globals.LOG("Seeking to frame ", seekedToFrame);
             self.lastSeekedTo = seekedToFrame;
