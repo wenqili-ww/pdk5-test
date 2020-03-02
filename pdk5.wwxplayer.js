@@ -66,7 +66,9 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             });
 
             window.wirewax.pdkPlugin.controller.addEventListener("OnMediaEnd", function(event) {
-                self.onEnd();
+                if(!self.ended){
+                    self.onEnd();
+                }
             });
 
             self.videoLoadEnded = true;
