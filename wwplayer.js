@@ -45946,7 +45946,7 @@ wwplayer.define(
                     playerType = "mediaSource";
                 }
 
-                if (playerType != "newbcp" && playerType != "flowPlayer" && globals.IS_IPHONE) {
+                if (playerType != "newbcp" && playerType != "flowPlayer" &&  playerType != "pdk5" && globals.IS_IPHONE) {
                     // all the brightcove, etc players must fallback to our bagel
                     if (playerType !== "newThreeSixtyPlayer") {
                         playerType = "ww";
