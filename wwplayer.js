@@ -847,10 +847,10 @@ var wwplayer;
                     load: function() {
                         var url = this.map.url;
 
-                        // skip jquery to prevent auth conflict with PDK5 / AMCN
-                        if(window.wirewax.pdkPlugin && window.requestor_id === "BBCA" && this.map.name === "jquery") {
-                            return
-                        }
+                        // // skip jquery to prevent auth conflict with PDK5 / AMCN
+                        // if(window.wirewax.pdkPlugin && window.requestor_id === "BBCA" && this.map.name === "jquery") {
+                        //     return
+                        // }
 
                         //Regular dependency.
                         if (!urlFetched[url]) {
@@ -46612,7 +46612,7 @@ wwplayer.require.config({
         "raphael-shadow": { raphael: "raphael" }
     },
     paths: {
-        jquery: "vendor/jquery",
+        jquery: "",
         "jquery-private": "jquery-private",
         "jquery-jsonp": "vendor/jquery.jsonp",
         raphael: "vendor/raphael",
