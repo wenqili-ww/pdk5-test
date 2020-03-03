@@ -847,6 +847,11 @@ var wwplayer;
                     load: function() {
                         var url = this.map.url;
 
+                        // skip jquery to prevent auth conflict with PDK5 / AMCN
+                        if(window.wirewax.pdkPlugin && window.requestor_id === "BBCA" && this.map.name === "jquery") {
+                            return
+                        }
+
                         //Regular dependency.
                         if (!urlFetched[url]) {
                             urlFetched[url] = true;
