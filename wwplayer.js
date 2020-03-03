@@ -46612,7 +46612,7 @@ wwplayer.require.config({
         "raphael-shadow": { raphael: "raphael" }
     },
     paths: {
-        jquery: "",
+        jquery: "vendor/jquery",
         "jquery-private": "jquery-private",
         "jquery-jsonp": "vendor/jquery.jsonp",
         raphael: "vendor/raphael",
@@ -46991,8 +46991,9 @@ window.reloadWirewax = function(overrides) {
  **/
 
 function init_requirejs() {
+    let $ = jQuery.noConflict();
     wwplayer.require(
-        ["jquery", "globals", "apiService", "Core", "modernizr", "pubsub", "underscore", "require-shim", "jquery-jsonp", "requestAnimationFrameShim"],
+        ["globals", "apiService", "Core", "modernizr", "pubsub", "underscore", "require-shim", "jquery-jsonp", "requestAnimationFrameShim"],
         function($, globals, apiService, Core, Modernizr, PubSub, _, requireShim, jqueryJsonp, requestAnimationFrameShim) {
             var self = this;
             // Don't allow Google Web Preview to load the player and cause idiotic errors
