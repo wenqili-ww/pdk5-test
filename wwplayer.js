@@ -46612,7 +46612,7 @@ wwplayer.require.config({
         "raphael-shadow": { raphael: "raphael" }
     },
     paths: {
-        jquery: "vendor/jquery",
+        // jquery: "vendor/jquery",
         "jquery-private": "jquery-private",
         "jquery-jsonp": "vendor/jquery.jsonp",
         raphael: "vendor/raphael",
