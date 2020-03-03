@@ -46612,7 +46612,7 @@ wwplayer.require.config({
         "raphael-shadow": { raphael: "raphael" }
     },
     paths: {
-        // jquery: "vendor/jquery",
+        jquery: "vendor/jquery",
         "jquery-private": "jquery-private",
         "jquery-jsonp": "vendor/jquery.jsonp",
         raphael: "vendor/raphael",
@@ -48219,7 +48219,12 @@ function init_requirejs() {
         }
     );
 }
-init_requirejs();
+
+window.wirewax.pdkPlugin.controller.addEventListener("OnMediaLoadStart", function(event){
+    if(!window.wirewax.loadedDependencies) {
+        init_requirejs();
+    }
+})
 
 wwplayer.define("dependencies", function() {});
 
