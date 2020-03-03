@@ -46991,10 +46991,10 @@ window.reloadWirewax = function(overrides) {
  **/
 
 function init_requirejs() {
-    let $ = jQuery.noConflict();
     wwplayer.require(
         ["globals", "apiService", "Core", "modernizr", "pubsub", "underscore", "require-shim", "jquery-jsonp", "requestAnimationFrameShim"],
-        function($, globals, apiService, Core, Modernizr, PubSub, _, requireShim, jqueryJsonp, requestAnimationFrameShim) {
+        function(globals, apiService, Core, Modernizr, PubSub, _, requireShim, jqueryJsonp, requestAnimationFrameShim) {
+            let $ = jQuery.noConflict();
             var self = this;
             // Don't allow Google Web Preview to load the player and cause idiotic errors
             if (globals.IS_GOOGLE_BOT || globals.IS_DEJACLICK_BOT) {
