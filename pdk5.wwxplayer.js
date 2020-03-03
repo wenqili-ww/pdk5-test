@@ -46,7 +46,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
                         self.play();
                     }
                     self.playProgress = event.data.currentTime;
-                    console.log("current progress: ", self.playProgress/1000)
+                    // console.log("current progress: ", self.playProgress/1000)
                 }
             });
 
