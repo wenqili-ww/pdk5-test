@@ -2323,6 +2323,8 @@ https://github.com/mroderick/PubSubJS
     return PubSub;
 });
 
+if( !jQuery || jQuery.fn.jquery !== "1.12.4") {
+
 /*! jQuery v1.12.4 | (c) jQuery Foundation | jquery.org/license */
 !(function(a, b) {
     "object" == typeof module && "object" == typeof module.exports
@@ -11448,6 +11450,8 @@ https://github.com/mroderick/PubSubJS
     );
 });
 
+
+}
 /**
 	Sets jQuery's noConflict flag
 
