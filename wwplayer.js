@@ -1677,7 +1677,7 @@ var wwplayer;
                     //allow overriding in the optimizer.
                     load: function(id, url) {
                         if(jQuery && id === "jquery") {
-                            url = checkJQuery().src;
+                            return
                         }
 
                         req.load(context, id, url);
@@ -11468,6 +11468,9 @@ if( !jQuery || jQuery.fn.jquery !== "1.12.4") {
 	@requires jquery
 **/
 wwplayer.define("jquery-private", ["jquery"], function($) {
+    if(!$ && jQuery) {
+        $ = jQuery
+    }
     return $.noConflict(true);
 });
 wwplayer.define("globals", [], function() {
