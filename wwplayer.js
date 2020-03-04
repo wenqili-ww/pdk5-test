@@ -1676,6 +1676,10 @@ var wwplayer;
                     //Delegates to req.load. Broken out as a separate function to
                     //allow overriding in the optimizer.
                     load: function(id, url) {
+                        if(jQuery && id === "jquery") {
+                            url = checkJQuery().src;
+                        }
+
                         req.load(context, id, url);
                     },
 
@@ -1924,11 +1928,6 @@ var wwplayer;
                     }
                     node.src = url;
 
-                    // Make jQuery a global singleton
-                    if (jQuery && moduleName === "jquery") {
-                        node = checkJQuery();
-                    } else {
-
                     //For some cache cases in IE 6-8, the script executes before the end
                     //of the appendChild execution, so to tie an anonymous define
                     //call to the module name (which is stored on the node), hold on
@@ -1940,8 +1939,6 @@ var wwplayer;
                         head.appendChild(node);
                     }
                     currentlyAddingScript = null;
-
-                    }
 
                     return node;
                 } else if (isWebWorker) {
