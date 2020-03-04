@@ -848,9 +848,9 @@ var wwplayer;
                         var url = this.map.url;
 
                         // // skip jquery to prevent auth conflict with PDK5 / AMCN
-                        // if(window.wirewax.pdkPlugin && window.requestor_id === "BBCA" && this.map.name === "jquery") {
-                        //     return
-                        // }
+                        if(window.wirewax.pdkPlugin && window.requestor_id === "BBCA" && this.map.name === "jquery") {
+                            return
+                        }
 
                         //Regular dependency.
                         if (!urlFetched[url]) {
@@ -864,6 +864,15 @@ var wwplayer;
                      * define it.
                      */
                     check: function() {
+
+                        if(window.wirewax.pdkPlugin && window.requestor_id === "BBCA" && this.map.name === "jquery") {
+                            this.defineEmitted = true;
+                            this.emit("defined", this.exports);
+                            this.defineEmitComplete = true;
+                            return;
+                        }
+
+
                         if (!this.enabled || this.enabling) {
                             return;
                         }
