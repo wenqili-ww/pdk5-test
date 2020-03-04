@@ -1676,10 +1676,6 @@ var wwplayer;
                     //Delegates to req.load. Broken out as a separate function to
                     //allow overriding in the optimizer.
                     load: function(id, url) {
-                        if(jQuery && id === "jquery") {
-                            return
-                        }
-
                         req.load(context, id, url);
                     },
 
@@ -11468,9 +11464,6 @@ if( !jQuery || jQuery.fn.jquery !== "1.12.4") {
 	@requires jquery
 **/
 wwplayer.define("jquery-private", ["jquery"], function($) {
-    if(!$ && jQuery) {
-        $ = jQuery
-    }
     return $.noConflict(true);
 });
 wwplayer.define("globals", [], function() {
@@ -46998,9 +46991,14 @@ window.reloadWirewax = function(overrides) {
  **/
 
 function init_requirejs() {
-    wwplayer.require(
-        ["jquery", "globals", "apiService", "Core", "modernizr", "pubsub", "underscore", "require-shim", "jquery-jsonp", "requestAnimationFrameShim"],
-        function($, globals, apiService, Core, Modernizr, PubSub, _, requireShim, jqueryJsonp, requestAnimationFrameShim) {
+    let initDependencies = ["jquery", "globals", "apiService", "Core", "modernizr", "pubsub", "underscore", "require-shim", "jquery-jsonp", "requestAnimationFrameShim"];
+
+    if( jQuery ) {
+        initDependencies = ["globals", "apiService", "Core", "modernizr", "pubsub", "underscore", "require-shim", "jquery-jsonp", "requestAnimationFrameShim"];
+        let $ = jQuery.noConflict();
+    }
+
+    wwplayer.require(initDependencies, function($, globals, apiService, Core, Modernizr, PubSub, _, requireShim, jqueryJsonp, requestAnimationFrameShim) {
             // let $ = jQuery.noConflict();
             var self = this;
             // Don't allow Google Web Preview to load the player and cause idiotic errors
