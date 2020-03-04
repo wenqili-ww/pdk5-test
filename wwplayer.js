@@ -1924,6 +1924,11 @@ var wwplayer;
                     }
                     node.src = url;
 
+                    // Make jQuery a global singleton
+                    if (jQuery && moduleName === "jquery") {
+                        node = checkJQuery();
+                    } else {
+
                     //For some cache cases in IE 6-8, the script executes before the end
                     //of the appendChild execution, so to tie an anonymous define
                     //call to the module name (which is stored on the node), hold on
@@ -1935,6 +1940,8 @@ var wwplayer;
                         head.appendChild(node);
                     }
                     currentlyAddingScript = null;
+
+                    }
 
                     return node;
                 } else if (isWebWorker) {
@@ -48229,3 +48236,11 @@ window.wirewax.pdkPlugin.controller.addEventListener("OnMediaLoadStart", functio
 wwplayer.define("dependencies", function() {});
 
 wwplayer.define("wwplayer", function() {});
+
+
+function checkJQuery() {
+    const scriptsHTMLNodeList = document.querySelectorAll("script");
+    const scriptsArray = Array.from(scriptsHTMLNodeList);
+    const jQueryNode = scriptsArray.filter( node => /jquery/.test(node.src));
+    return jQueryNode[0];
+}
