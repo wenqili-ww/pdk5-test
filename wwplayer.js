@@ -11463,7 +11463,14 @@ if( !jQuery || jQuery.fn.jquery !== "1.12.4") {
 	@module jquery-private
 	@requires jquery
 **/
-wwplayer.define("jquery-private", ["jquery"], function($) {
+let privateJqueryDependencies = ["jquery"]
+if(jQuery){
+    privateJqueryDependencies = []
+}
+wwplayer.define("jquery-private", privateJqueryDependencies, function($) {
+    if(jQuery){
+        $ = jQuery.noConflict();
+    }
     return $.noConflict(true);
 });
 wwplayer.define("globals", [], function() {
@@ -46999,7 +47006,9 @@ function init_requirejs() {
     }
 
     wwplayer.require(initDependencies, function($, globals, apiService, Core, Modernizr, PubSub, _, requireShim, jqueryJsonp, requestAnimationFrameShim) {
-            // let $ = jQuery.noConflict();
+            if( jQuery && !$) {
+                $ = jQuery.noConflict();
+            }
             var self = this;
             // Don't allow Google Web Preview to load the player and cause idiotic errors
             if (globals.IS_GOOGLE_BOT || globals.IS_DEJACLICK_BOT) {
