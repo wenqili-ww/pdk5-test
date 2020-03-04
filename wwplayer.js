@@ -11473,6 +11473,10 @@ if( !jQuery || jQuery.fn.jquery !== "1.12.4") {
 	@requires jquery
 **/
 wwplayer.define("jquery-private", ["jquery"], function($) {
+    if(window.wirewax.pdkPlugin && window.requestor_id === "BBCA" && this.map.name === "jquery") {
+        $ = jQuery;
+    }
+
     return $.noConflict(true);
 });
 wwplayer.define("globals", [], function() {
