@@ -11474,7 +11474,7 @@ if( !jQuery || jQuery.fn.jquery !== "1.12.4") {
 **/
 wwplayer.define("jquery-private", ["jquery"], function($) {
     if(window.wirewax.pdkPlugin && window.requestor_id === "BBCA") {
-        $ = jQuery;
+        return jQuery
     }
 
     return $.noConflict(true);
