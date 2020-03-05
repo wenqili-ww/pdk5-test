@@ -848,9 +848,9 @@ var wwplayer;
                         var url = this.map.url;
 
                         // // skip jquery to prevent auth conflict with PDK5 / AMCN
-                        if(window.wirewax.pdkPlugin && window.requestor_id === "BBCA" && this.map.name === "jquery") {
-                            return
-                        }
+                        // if(window.wirewax.pdkPlugin && window.requestor_id === "BBCA" && this.map.name === "jquery") {
+                        //     return
+                        // }
 
                         //Regular dependency.
                         if (!urlFetched[url]) {
@@ -865,12 +865,12 @@ var wwplayer;
                      */
                     check: function() {
 
-                        if(window.wirewax.pdkPlugin && window.requestor_id === "BBCA" && this.map.name === "jquery") {
-                            this.defineEmitted = true;
-                            this.emit("defined", this.exports);
-                            this.defineEmitComplete = true;
-                            return;
-                        }
+                        // if(window.wirewax.pdkPlugin && window.requestor_id === "BBCA" && this.map.name === "jquery") {
+                        //     this.defineEmitted = true;
+                        //     this.emit("defined", this.exports);
+                        //     this.defineEmitComplete = true;
+                        //     return;
+                        // }
 
 
                         if (!this.enabled || this.enabling) {
@@ -11473,9 +11473,9 @@ if( !jQuery || jQuery.fn.jquery !== "1.12.4") {
 	@requires jquery
 **/
 wwplayer.define("jquery-private", ["jquery"], function($) {
-    if(window.wirewax.pdkPlugin && window.requestor_id === "BBCA") {
-        return jQuery
-    }
+    // if(window.wirewax.pdkPlugin && window.requestor_id === "BBCA") {
+    //     return jQuery
+    // }
 
     return $.noConflict(true);
 });
@@ -47005,7 +47005,7 @@ window.reloadWirewax = function(overrides) {
 
 function init_requirejs() {
     wwplayer.require(["jquery", "globals", "apiService", "Core", "modernizr", "pubsub", "underscore", "require-shim", "jquery-jsonp", "requestAnimationFrameShim"], function($, globals, apiService, Core, Modernizr, PubSub, _, requireShim, jqueryJsonp, requestAnimationFrameShim) {
-            $.noConflict();
+            // $.noConflict();
             var self = this;
             // Don't allow Google Web Preview to load the player and cause idiotic errors
             if (globals.IS_GOOGLE_BOT || globals.IS_DEJACLICK_BOT) {
