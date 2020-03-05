@@ -42,9 +42,6 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
 
             window.wirewax.pdkPlugin.controller.addEventListener("OnMediaPlaying", function(event) {
                 if (event.data.currentTime > 0) {
-                    if (!self.startedPlaying) {
-                        self.play();
-                    }
                     self.playProgress = event.data.currentTime;
                     // console.log("current progress: ", self.playProgress/1000)
                 }
@@ -63,11 +60,13 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             window.wirewax.pdkPlugin.controller.addEventListener("OnPlayerPause", function(event) {
                 self.PDKPlaying = false;
 
-                if(imaPlugin.states.adPlaying) {
+                if(imaPlugin && imaPlugin.states.adPlaying) {
+                    self.container.hide();
                     return;
                 }
 
                 if (self.wwxIsPlaying) {
+                    self.container.show();
                     self.pause();
                 }
             });
