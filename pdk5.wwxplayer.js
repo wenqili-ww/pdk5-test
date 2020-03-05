@@ -45,6 +45,10 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
                     self.playProgress = event.data.currentTime;
                     // console.log("current progress: ", self.playProgress/1000)
                 }
+
+                if (!imaPlugin.states.adPlaying && self.container.css("display") === "none") {
+                    self.container.show();
+                }
             });
 
             window.wirewax.pdkPlugin.controller.addEventListener("OnMediaSeek", function(event) {
