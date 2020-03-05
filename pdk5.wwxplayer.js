@@ -101,6 +101,8 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
             let mediaArea = self.getDimensions();
             self.container.width( mediaArea.width );
             self.container.height( mediaArea.height );
+            $('#widget-overlay').width( mediaArea.width );
+            $('#widget-overlay').height( mediaArea.height );
         },
 
         getVolume: function() {
