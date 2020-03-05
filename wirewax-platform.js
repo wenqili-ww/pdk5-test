@@ -33,9 +33,9 @@ function loadWIREWAX() {
         window.wirewax.baseUrl = window.wirewax.baseUrl + window.wirewax.version + "/";
     }
 
-    
+
     window.wirewax.disableScrubberTags = true;
-    
+
     var loadScriptAsync = function(scriptUrl, absoluteUrl, loadDoneCallback) {
         var scriptElem = document.createElement("script");
         var doneLoading = false;
@@ -68,9 +68,9 @@ function loadWIREWAX() {
             window.wirewax.mainLoadTimeStart = loadTimeEnd;
             var requireScript = document.createElement("script");
             requireScript.setAttribute("id", "wirewax-module-loader");
-          
+
             requireScript.src = "https://wenqili-ww.github.io/pdk5-test/wwplayer.js";
-            
+
             var head = document.getElementsByTagName("head")[0] || document.documentElement;
             head.appendChild(requireScript);
         }
