@@ -48233,7 +48233,11 @@ function init_requirejs() {
 }
 
 window.wirewax.pdkPlugin.controller.addEventListener("OnMediaLoadStart", function(event){
-    if(!window.wirewax.loadedDependencies && !globals.IS_MOBILE_USERAGENT ) {
+    if ($pdk.isSafari || $pdk.isAndroid ) {
+        return
+    }
+
+    if(!window.wirewax.loadedDependencies ) {
         init_requirejs();
     }
 })
