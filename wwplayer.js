@@ -47693,7 +47693,7 @@ function init_requirejs() {
                     window.wirewax.pdkPlugin.controller.addEventListener("OnMediaStart", function(event){
                         var contentID = window.wirewax.player === "pdk6" ? event.data.contentID : event.data.baseClip.contentID;
                         console.log(" ::WIREWAX:: PDK content ID: " + contentID);
-                        if(window.wirewax.vidId || globals.IS_MOBILE_USERAGENT ) {
+                        if(window.wirewax.vidId) {
                             // to improve the performance when replay
                             // to debug on mobile
                             return
@@ -48233,7 +48233,7 @@ function init_requirejs() {
 }
 
 window.wirewax.pdkPlugin.controller.addEventListener("OnMediaLoadStart", function(event){
-    if(!window.wirewax.loadedDependencies) {
+    if(!window.wirewax.loadedDependencies && !globals.IS_MOBILE_USERAGENT ) {
         init_requirejs();
     }
 })
