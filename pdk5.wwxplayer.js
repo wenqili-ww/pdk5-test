@@ -241,6 +241,9 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
 
             $("#bottom-button-bar").css({ "pointer-events": "auto" });
             $("#wirewax-logo").remove();
+            $("#play-button").remove();
+            $("#pause-button").remove();
+            $(".wwx-loader").remove();
 
             let waitForPlayer = window.setInterval(function() {
                 if (self.player) {
