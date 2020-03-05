@@ -62,6 +62,11 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
 
             window.wirewax.pdkPlugin.controller.addEventListener("OnPlayerPause", function(event) {
                 self.PDKPlaying = false;
+
+                if(imaPlugin.states.adPlaying) {
+                    return;
+                }
+
                 if (self.wwxIsPlaying) {
                     self.pause();
                 }
@@ -133,6 +138,7 @@ wwplayer.define(["jquery", "AbstractPlayer", "pubsub", "globals", "LogEvent", "r
                 window.wirewax.pdkPlugin.controller.pause(true);
                 self.playerState = 2;
                 this._super();
+
             } catch (err) {
                 console.log("pause error", err);
             }
